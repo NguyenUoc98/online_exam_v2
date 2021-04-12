@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+	 <link rel="stylesheet" href="D:/XAMPP/htdocs/bt/css/style2.css">
+	 <style>
+	 	.imgslider{
+	 		width: 300px;
+	 		height: 250px;
+	 	}
+	 	.thanh_slider{
+	 		margin-left: 50px;
+	 		margin-right: 50px;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	 </style>
+</head>
+<body>
+	<div class="container-fluid thanh_slider">
+	  
+	   <section class="customer-logos  thanh_slider">
+	      <div class="slide"><img src="../../../public/imgs/back1.png" class="imgslider"></div>
+	      <div class="slide"><img src="../../../public/imgs/back1.png" class="imgslider"></div>
+	      <div class="slide"><img src="../../../public/imgs/back1.png" class="imgslider"></div>
+	      <div class="slide"><img src="../../../public/imgs/back1.png" class="imgslider"></div>
+	      <div class="slide"><img src="../../../public/imgs/back1.png" class="imgslider"></div>
+	      <div class="slide"><img src="../../../public/imgs/back1.png" class="imgslider"></div>
+	      <div class="slide"><img src="../../../public/imgs/back1.png" class="imgslider"></div>
+	      <div class="slide"><img src="../../../public/imgs/back1.png" class="imgslider"></div>
+	      
+	   </section>
+	</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    $('.customer-logos').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+.container-fluid{
+	background-image: url(../imgs/anhbiadep.png);
+	/*background-image: url(../imgs/banner/bg-feedback-student.jpg);*/
+	
+	font-family: 'Roboto Slab', serif;
+}
+
+
+.main_lichsu{
+	text-align: center;
+}
+.header_lichsu p{
+	margin-top: 50px;
+	color: #08038C;
+	font-size: 29px;
+}
+.information{
+	font-size: 20px;
+	margin-bottom: 30px;
+
+}
+.tenky{
+	
+}
+
+.option input:checked .option{
+	 		background: #08038C;
+	 		color: #000;
+	 	}
+.content1 p{
+			display: inline;
+		}
+
+#question{
+	 		padding: 10px 0px 10px 15px;
+	 		font-size: 22px;
+	 		background-color: #08038C;
+	 		border-radius: 20px;
+	 		margin: 10px 0 10px 100px;
+	 		color: #f6f6f6;
+	 		text-align: left;
+	 		width: 950px;
+			
+}
+
+.option{
+	width: 467px;
+	display: inline-block;
+	padding: 10px 0px 10px 15px;
+	vertical-align: middle;
+	background: #97D7F5;
+	margin: 10px 0px 10px 10px;
+	color: #000000;
+	border-radius: 20px;
+	text-align: left;
+	font-size: 18px;
+}
+
+.content1{
+	
+	margin-bottom: 50px;
+}
+
+.scroll{
+	float: right;
+	margin-top: 720px;
+	position: fixed;
+	margin-left: 1310px;
+}
+.scroll p{
+	display: inline;
+	margin-right: 20px;
+	background: #ffb606;
+
+	
+}
+.up{
+	padding: 15px;
+	cursor: pointer;
+}
+.down{
+	cursor: pointer;
+	padding: 15px ;
+}
+.down i{
+	margin-right: 15px;
+}

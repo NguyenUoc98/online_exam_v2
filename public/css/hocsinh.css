@@ -1,0 +1,825 @@
+login*{
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma;
+}
+
+.menu-top{
+	background: linear-gradient(90deg,#203A65,#1A3B6E);
+	height: 70px;
+	width: 100%;
+	
+}
+
+.add, .diachi{
+	color: #fff;
+}
+
+.diachi{
+	font-size: 13px;
+
+}
+
+.a{
+	font-size: 11px;
+
+}
+
+.add{
+	margin-top: 15px;
+	margin-bottom: 4px;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.doc{
+	border-right: 1px solid #DAD7D7;
+	text-align: center;
+	margin-top: 3px;
+}
+.doc i{
+	margin-right: 3px;
+}
+
+.login{
+	color: #000;
+	background-color: #ffb606;
+	width: 100px;
+	padding-left: 20px;
+	padding-top: 10px;
+	height: 40px;
+	font-weight: bold;
+	border-radius: 5px;
+	margin-top: 20px;
+}
+.login i{
+	margin-left: 3px;
+
+}
+
+.menu-ngang{
+	height: 80px;
+	margin-top: 20px;
+	border-bottom: 1px solid #D4D1D1;
+}
+/*sửa nút tìm kiếm bị nhảy xuống màn hình*/
+.ngang{
+	text-align: left;
+}
+
+.ngang ul li{
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+	float: left;
+}
+.ngang ul li a{
+	font-weight: bold;
+	color: #313030;
+	text-decoration: none;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 14px;
+	
+}
+.ngang span{
+	font-size: 12px;
+}
+.ngang ul{
+	padding-top: 20px;
+}
+
+ .affix {
+      top: 0px;
+      width: 100%; /*chỉnh độ rộng của thanh menu khi kéo trang xuống*/
+      left: 9px;
+      padding-top: 20px;
+      z-index: 9999 !important; /*thiết lập thứ tự chồng lên nhau theo giá trị số,gtri cao hơn nằm lên trên*/
+      background-color: #fff;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #DFDDDD;
+  }
+
+  nav{
+  	transition: align-items .2s;
+  }
+
+.timkiem{
+	border-radius: 5px;
+	border: 1px solid #B9B8B8;
+	height: 35px;
+}
+
+.ngang .fa-search{
+	/*margin-left: -6px;
+	border-top: 1px solid #B9B8B8;
+	border-right: 1px solid #B9B8B8;
+	border-bottom: 1px solid #B9B8B8;
+	padding: 9px;
+	padding-bottom: 10px;
+	border-radius: 0px 5px 5px 0px;
+	background-color: #979696;*/
+	
+}
+
+
+.anhbanner{
+	background-image: url("../imgs/bg_login.jpg");
+	width: 1490px;
+	height: 550px;
+	animation: slides 20s infinite;
+	animation-delay: 5s;
+
+}
+
+@keyframes slides{
+	25%{
+		background: url("../imgs/banner/3.jpg");
+	}
+	50%{
+		background: url("../imgs/banner/banner1.jpg");
+		
+	}
+	75%{
+		background: url("../imgs/banner/2.jpg");
+		
+	}
+	100%{
+		background: url("../imgs/bg_login.jpg");
+		
+	}
+}
+
+.cmt span{
+	font-size: 11px;
+}
+
+
+
+/*.bglogin{
+	opacity: 0.6; //làm mờ ảnh
+	content: "";
+	z-index: -1;
+
+}*/
+
+.banner{
+	
+	margin-top: 120px;
+}
+
+
+.online, .training{
+	color: #fff;
+	font-weight: bold;
+	font-size: 50px;
+}
+
+.online{
+	margin-bottom: -15px;
+}
+
+
+.view{
+	color: #fff;
+	padding: 15px 40px;
+	font-weight: bold;
+	border: 2px solid #fff;
+	margin-right: 10px;
+
+}
+
+.view:before{
+
+}
+
+.thamgia{
+	color: #2B2A2A;
+
+	background-color: #ffb606;
+	border: 2px solid #ffb606;
+	padding: 15px 40px;
+	font-weight: bold;
+}
+
+.dream{
+	color: #fff;
+	font-size: 30px;
+	position: absolute;
+	animation: traisang 0.8s forwards;
+	animation-delay: 0.4s;
+	opacity: 0;
+}
+@-webkit-keyframes traisang{
+	0%{ left: 0px; opacity: 0;}
+	100%{ left: 150px; opacity: 1;}
+}
+
+.up{
+	
+	margin-top:370px;
+	margin-left: 135px;
+	position: absolute;
+	animation: mu_cu_nhan 0.8s forwards;
+	animation-delay: 0.4s;
+	opacity: 0;
+}
+@-webkit-keyframes mu_cu_nhan{
+	0%{top: 0px; opacity: 0;}
+	100%{top: -310px; opacity: 1;}
+}
+
+.canbtn{
+	
+	margin-top:530px;
+	margin-left: 135px;
+	position: absolute;
+	animation: viewup 1s forwards;
+	animation-delay: 0.5s;
+	opacity: 0;
+}
+@-webkit-keyframes viewup{
+	0%{top: 0px; opacity: 0;}
+	100%{top: -260px; opacity: 1;}
+}
+
+.main_test{
+	margin-top: 30px;
+}
+.hinhanh{
+	margin-top: 30px;
+	margin-left: 30px;
+	margin-bottom: 30px;
+}
+
+.thanh_menu{
+	
+	border-radius: 25px;
+	height: 40px;
+	
+}
+
+.thanh_menu a{
+	text-decoration: none;
+	color: #000;
+	font-size: 15px;
+}
+
+
+
+
+.nav-tabs li a:hover{
+  color: #000;
+ background-color: #D0CDCD;
+ border: 1px solid #D0CDCD;
+}
+
+
+#THPT{
+	border-radius: 25px;
+	background-color:#002147;
+	color: #fff;
+}
+
+
+
+.thanh_menu .nav-tabs{
+		background-color: #D0CDCD;
+		border-radius: 25px;
+}
+
+
+
+.footer{
+	margin-top: 330px;
+	background-image: url('../imgs/gbfooter.jpg');
+	height: 400px;
+	width: 100%;
+	color: #fff;
+	
+
+}
+
+.footer a:hover{
+	color: #fff;
+}
+
+.footer span{
+	text-decoration: none;
+	color: #fff;
+}
+
+.thongtin i{
+	color: #0f84e7;
+	font-size: 11px;
+}
+
+.chinhsach{
+	margin-top: 30px;
+}
+
+.chinhsach i{
+	color: #0f84e7;
+	font-size: 11px;
+}
+.thelast{
+	color: #fff;
+	padding-top: 15px;
+	border-top: 1px solid #D8D8D8;
+	height: 45px;
+	line-height: 45px;
+
+}
+
+.thelast .cop{
+	margin-left: 200px;
+	font-size: 14px;
+}
+
+
+.cop span{
+	margin-left: 600px;
+}
+
+.cop span i{
+	margin-right: 10px;
+	font-size: 20px;
+	color: #fff;
+}
+
+.phanchan{
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+}
+
+
+.phanchan .footer_lienhe{
+	color: #fff;
+}
+.thongtin{
+	padding-left: 50px;
+}
+
+.thongtin , .bando{
+	padding-top: 30px;
+}
+
+.mucunhan{
+	color: #fff;
+	font-size: 35px;
+}
+
+.ic1{
+	margin-left: 12px;
+}
+
+.ic2{
+	margin-left: 59px;
+}
+.ic3{
+	margin-left: 49px;
+}
+
+.ic4{
+	margin-left: 76px;
+}
+.ic5{
+	margin-left: 52px;
+}
+.ic6{
+	margin-left: 40px;
+}
+.ic7{
+	margin-left: 49px;
+}
+
+.lgo{
+	margin-top: -10px;
+	margin-bottom: 15px;
+}
+
+.lgo i{
+	
+	font-size: 45px;
+	margin-top: 20px;
+}
+
+.down_menu{
+	margin-top: 39px;
+	margin-left: 20px;
+	border-radius: 0px;
+	padding-bottom: 10px;
+	
+}
+
+.down_menu span{
+	font-size: 14px;
+	
+}
+
+.ngang ul li .dropdown ul li{
+	margin-bottom: 10px;
+
+}
+
+.camnhan{
+	color: #000;
+	text-align: center;
+	border-bottom: 1px solid #0AADA1;
+	margin-top: -10px;
+}
+
+.camnhan h3{
+	font-weight: bold;
+	color: #0AADA1;
+
+}
+
+.emotion{
+	margin-bottom: -100px;
+	
+}
+.sodem{
+	color: #fff;
+	height: 200px;
+	background: linear-gradient(90deg,#1A3B6E,#3D64A0);
+	text-align: center;
+	margin-bottom: -330px;
+	
+}
+
+.canso{
+	margin-top: 30px;
+	
+}
+
+.num{
+	font-size: 40px;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.coldb{
+	
+		color: #fff;
+		text-transform: uppercase;
+		padding-bottom: 40px;
+		
+}
+
+.coldb i{
+		font-size: 40px;
+		color: #ffb606;
+	}
+.coldb span{
+		
+		font-size: 18px;
+	}
+
+.fb1{
+	
+	width: 120px;
+	height: 120px;
+	margin-left: 110px;
+	margin-top: 40px;
+}
+.fb1 img{
+	border-radius: 50%;
+}
+
+.tenthisinh{
+	color: #fff;
+	font-size: 14px;
+	margin-left: 120px;
+	font-weight: bold;
+}
+.cmt{
+	color: #fff;
+	font-size: 13px;
+	margin-left: 40px;
+	margin-right: 40px;
+	text-align: center;
+}
+.decoration{
+	margin-left: 120px;
+	border-bottom: 1px solid #fff;
+	width: 100px;
+	margin-top: 60px;
+
+}
+
+.loiich{
+	margin-top: -30px;
+	margin-bottom: 100px;
+}
+
+.thisinhcamnhan{
+	background-image: url(../imgs/banner/bg-feedback-student.jpg);
+	height: 680px;
+}
+
+.ctloi{
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.ctloi p{
+	margin-top: 15px;
+	color: #4E4C4C;
+}
+
+.gt{
+	margin-top: -80px;
+	margin-bottom: 40px;
+	text-align: center;
+	color: #4E4C4C;
+}
+
+.dethi{
+	width: 200px;
+	height: 270px;
+	border: 1px solid #ACABAB;
+	text-align: center;
+	margin-right: 70px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.hinhanh{
+	margin-left: 60px;
+}
+.dethi img{
+	margin-left: -10px;
+	
+}
+
+.tenmon{
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+.danhgia{
+	font-size: 11px;
+	font-weight: normal;
+	border-bottom: 10px;
+}
+
+.danhgia .fa-star{
+	color: #ffb606 ;
+}
+
+.hscmt{
+	margin-left: 10px;
+}
+
+.title{
+	font-size: 13px;
+}
+
+	.email-box{
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		margin-top: -10px;
+	}
+	.email-box .fa-search{
+		background-color: #002147;
+		width: 40px;
+		line-height: 40px;
+		text-align: center;
+		font-size: 16px;
+		color: #fff;
+		border-radius: 50px 0px 0px 50px;
+		
+	}
+	.tbox, .btntk{
+		border: none;
+		outline: none;
+
+	}
+	.tbox{
+		width: 0px;
+		border: 1px solid #002147;
+		transition: 0.6s;
+	}
+	.email-box:hover > .tbox,.tbox:focus{
+		width: 165px;
+		/*padding: 0 10px;*/
+	}
+	.btntk{
+		background-color:#002147;
+		padding: 0 13px;
+		color: #fff;
+		text-transform: uppercase;
+		cursor: pointer;
+		margin-left: -3px;
+		border-radius:  0px 50px 50px 0px ;
+		text-transform: none;  /*thay đổi kiểu text về dạng mặc định:chữ thường*/
+		font-weight: bold;
+	}
+
+	.down_menu a{
+		font-weight: none;
+	}
+
+	.phanchan .footer_lienhe .guimail{
+		margin-bottom: 30px;
+	}
+	.email-box .fa-paper-plane{
+		background-color: #ffb606;
+		width: 40px;
+		line-height: 40px;
+		text-align: center;
+		font-size: 16px;
+		color: #000;
+		border-radius: 50px 0px 0px 50px;
+		
+	}
+	
+	.tbox1, .btntk1{
+		border: none;
+		outline: none;
+
+	}
+	.tbox1{
+		width: 0px;
+		border: 1px solid #ffb606;
+		transition: 0.6s;
+		color: #000;
+	}
+	.email-box:hover > .tbox1,.tbox1:focus{
+		width: 105px;
+		/*padding: 0 10px;*/
+	}
+	.btntk1{
+		background-color:#ffb606;
+		padding: 0 13px;
+		color: #000;
+		text-transform: uppercase;
+		cursor: pointer;
+		margin-left: -3px;
+		border-radius:  0px 50px 50px 0px ;
+		text-transform: none;  /*thay đổi kiểu text về dạng mặc định:chữ thường*/
+	}
+
+
+	/*CSS trang tin tức*/
+
+
+
+	.tintuc{
+		background-image: url(../imgs/banner/bg-feedback-student.jpg);
+		
+	}
+
+	.tieudetintuc{
+		border-radius: 25px 25px 25px 25px;
+		margin-top: 40px;
+		width: 100%;
+		height: 40px;
+		background-color: #D0CDCD;
+		margin-bottom: 40px;
+	}
+
+	.tieudetintuc h3{
+		color: #fff;
+		background-color: #002147;
+		border-radius: 25px 25px 25px 25px;
+		font-size: 17px;
+		width: 250px;
+		height: 40px;
+		line-height: 40px;
+		padding-left: 30px;
+		margin-top: 0px;
+		margin-left: -14px;
+
+	}
+	.tintuc_first .img_tintuc{
+		width: 270px;
+		height: 220px;
+		margin-top: 20px;
+		box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+		margin-left:-10px;
+	}
+
+	.trichdoan{
+		margin-top: 20px;
+		margin-left: -90px;
+	}
+
+	.trichdoan h4{
+		font-size: 17px;
+		font-weight: bold;
+	}
+
+	.time_cmt{
+		height: 40px;
+		line-height: 40px;
+		background-color: #E8E8E8;
+		width: 100%;
+		text-align: right;
+		color: #000;
+		padding-right: 40px;
+		font-size: 11px;
+
+	}
+
+	.time_cmt i{
+		font-size: 13px;
+		color: #716F6F;
+
+	}
+
+	.col_ngaydang{
+		margin-top: 20px;
+		
+	}
+	.ngaydang{
+		background-color: #E8E8E8;
+		color: #000;
+		border-radius: 5px;
+		padding: 5px 7px 5px 7px;
+		margin-left: 20px;
+	}
+
+	.anh_lienket{
+		height: 270px;
+	}
+
+	.tintuc .container{
+		margin-bottom: 40px;
+	}
+
+	.tintuc .phantrangtintuc{
+		text-align: right;
+		margin-right: 100px;
+		margin-top: 30px;
+		margin-bottom: 10px;
+	}
+	
+	.phantrangtintuc span{
+		color: #fff;
+		background-color: #002147;
+		padding: 10px;
+		margin-left: 10px;
+	}
+	/*Kết thúc CSS trang tin tức*/
+
+
+
+	/*CSS trang giới thiệu*/
+
+	.main_gioithieu img{
+		width: 700px;
+		height: 390px;
+	}
+
+	.anh_gioithieu{
+		text-align: center;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+	.main_gioithieu .anhlogogt{
+		width: 170px;
+		height: 70px;
+		margin-left: 30px;
+		margin-right: 10px;
+	}
+	
+	.main_gioithieu p{
+		margin-left: 30px;
+	}
+	/*Kết thúc CSS trang giới thiệu*/
+
+	.main_test .tieudetintuc{
+		margin-top: 10px;
+	}
+
+
+	/*CSS SLIDER*/
+	
+	.imgslider{
+	 	width: 300px;
+	 	height: 250px;
+	 }
+	 .thanh_slider{
+	 	margin-left: 50px;
+	 	margin-right: 50px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	/*Kết thúc CC SLDER*/
+
+	.thiTHPTQG .phantrangtintuc{
+		text-align: right;
+		margin-right: 100px;
+		margin-top: 0px;
+		margin-bottom: 40px;
+	}

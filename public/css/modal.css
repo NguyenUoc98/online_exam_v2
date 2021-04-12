@@ -1,0 +1,22 @@
+.modal-header{
+	
+	background-color:  #189eff;
+	color: #fff;
+	padding-bottom: 20px;
+}
+.text{
+	margin-left: 20px;
+}
+
+input[type='text']{
+	border-radius: 5px;
+	width: 300px;
+}
+
+.manybtns{
+	margin-top: 20px;
+
+}
+.modal-content{
+	width: 864px;
+}

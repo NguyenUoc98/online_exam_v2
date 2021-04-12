@@ -1,0 +1,243 @@
+.bg-primary{
+    position: relative;
+    overflow: hidden;
+}
+.anhmomo{
+     position:absolute; 
+    /* //cho .anhmomo lam con của relative để con căn theo cha */ 
+    background: rgb(120, 90, 90);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: -255px;
+    opacity: 0;
+    transition: all 0.4s;
+    
+}
+.bg-primary:hover .anhmomo{
+    left: 0px;
+    top: 0;
+    opacity: 0.4;
+}
+
+.table{
+    padding-left: 100px;
+}
+.table input[type="text"]{
+    width: 800px;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: 1px solid rgb(172, 169, 169);
+}
+.style_row{
+   font-size: 14px;
+}
+.input_sub{
+    border-radius: 5px;
+    background-color: rgb(66, 115, 228);
+    color: #fff;
+    padding: 10px;
+    margin-right: 15px;
+    border: 1px solid rgb(66, 115, 228);
+}
+.bg-danger{
+    position: relative;
+    overflow: hidden;
+}
+.anhmomo1{
+     position:absolute; 
+    /* //cho .anhmomo lam con của relative để con căn theo cha */ 
+    background: rgb(120, 90, 90);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: -255px;
+    opacity: 0;
+    transition: all 0.4s;
+    
+}
+.bg-danger:hover .anhmomo1{
+    left: 0px;
+    top: 0;
+    opacity: 0.4;
+}
+
+.bg-success{
+    position: relative;
+    overflow: hidden;
+}
+.anhmomo2{
+     position:absolute; 
+    /* //cho .anhmomo lam con của relative để con căn theo cha */ 
+    background: rgb(120, 90, 90);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: -255px;
+    opacity: 0;
+    transition: all 0.4s;
+    
+}
+.bg-success:hover .anhmomo2{
+    left: 0px;
+    top: 0;
+    opacity: 0.4;
+}
+
+.monhoc{
+    position: relative;
+    overflow: hidden;
+}
+.anhmomo3{
+     position:absolute; 
+    /* //cho .anhmomo lam con của relative để con căn theo cha */ 
+    background: rgb(120, 90, 90);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: -255px;
+    opacity: 0;
+    transition: all 0.4s;
+    
+}
+.monhoc:hover .anhmomo3{
+    left: 0px;
+    top: 0;
+    opacity: 0.4;
+}
+
+.bg-warning{
+    position: relative;
+    overflow: hidden;
+}
+.anhmomo4{
+     position:absolute; 
+    /* //cho .anhmomo lam con của relative để con căn theo cha */ 
+    background: rgb(120, 90, 90);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: -255px;
+    opacity: 0;
+    transition: all 0.4s;
+    
+}
+.bg-warning:hover .anhmomo4{
+    left: 0px;
+    top: 0;
+    opacity: 0.4;
+}
+
+.exam{
+    position: relative;
+    overflow: hidden;
+}
+.anhmomo5{
+     position:absolute; 
+    /* //cho .anhmomo lam con của relative để con căn theo cha */ 
+    background: rgb(120, 90, 90);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: -255px;
+    opacity: 0;
+    transition: all 0.4s;
+    
+}
+.exam:hover .anhmomo5{
+    left: 0px;
+    top: 0;
+    opacity: 0.4;
+}
+
+.grade{
+    position: relative;
+    overflow: hidden;
+}
+.anhmomo6{
+     position:absolute; 
+    /* //cho .anhmomo lam con của relative để con căn theo cha */ 
+    background: rgb(120, 90, 90);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: -255px;
+    opacity: 0;
+    transition: all 0.4s;
+    
+}
+.grade:hover .anhmomo6{
+    left: 0px;
+    top: 0;
+    opacity: 0.4;
+}
+
+
+
+.export{
+    position: relative;
+    overflow: hidden;
+}
+.anhmomo7{
+     position:absolute; 
+    /* //cho .anhmomo lam con của relative để con căn theo cha */ 
+    background: rgb(120, 90, 90);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: -255px;
+    opacity: 0;
+    transition: all 0.4s;
+    
+}
+.export:hover .anhmomo7{
+    left: 0px;
+    top: 0;
+    opacity: 0.4;
+}
+
+
+.import{
+    position: relative;
+    overflow: hidden;
+}
+.anhmomo8{
+     position:absolute; 
+    /* //cho .anhmomo lam con của relative để con căn theo cha */ 
+    background: rgb(120, 90, 90);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: -255px;
+    opacity: 0;
+    transition: all 0.4s;
+    
+}
+.import:hover .anhmomo8{
+    left: 0px;
+    top: 0;
+    opacity: 0.4;
+}
+
+.setting{
+    position: relative;
+    overflow: hidden;
+}
+.anhmomo9{
+     position:absolute; 
+    /* //cho .anhmomo lam con của relative để con căn theo cha */ 
+    background: rgb(120, 90, 90);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: -255px;
+    opacity: 0;
+    transition: all 0.4s;
+    
+}
+.setting:hover .anhmomo9{
+    left: 0px;
+    top: 0;
+    opacity: 0.4;
+}

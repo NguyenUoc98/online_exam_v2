@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Email animation</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<style>
+	
+	.container{
+		background-image: url(../../../public/imgs/back3.png);
+		background-size: cover;
+		padding: 100px 40px;
+		text-align: center;
+		color: #fff;
+	}
+
+	.container p{
+		max-width: 600px;
+		margin: 40px auto;
+		font-size: 15px;
+		font-weight: 300;
+
+	}
+	.email-box{
+		height: 40px;
+		display: flex;
+		justify-content: center;
+	}
+	.email-box i{
+		background-color: #2f3542;
+		width: 40px;
+		line-height: 40px;
+	}
+	.tbox, .btntk{
+		border: none;
+		outline: none;
+	}
+	.tbox{
+		width: 0px;
+		transition: 0.6s;
+	}
+	.email-box:hover > .tbox,.tbox:focus{
+		width: 260px;
+		padding: 0 10px;
+	}
+	.btntk{
+		background-color: #2f3542;
+		padding: 0 10px;
+		color: #fff;
+		text-transform: uppercase;
+		cursor: pointer;
+		border-radius: 0px;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<form action="">
+			<h1>Enimation Button</h1>
+			<div class="email-box">
+				<i class="fas fa-search"></i>
+				<input type="text" class="tbox" placeholder="Nhập từ khóa tìm kiếm">
+				<button class="btntk" type="button" name="button"> Tìm kiếm</button>
+			</div>
+
+			<p>Hover mouse to see great thing ^^! Hope you better</p>
+			
+		</form>
+	</div>
+</body>
+</html>

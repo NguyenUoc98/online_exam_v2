@@ -1,0 +1,122 @@
+
+.design_cauhoi{
+	padding-bottom: 25px;
+	text-align:right;
+	margin-top: -20px;
+}
+
+.btnthem{
+	background-color: #213351;
+	color:#fff;
+	margin-right: 5px;
+}
+.btnthem:hover{
+	color:#fff;
+}
+.tbl{
+	font-size: 13px;
+}
+.btnsuach{
+	background-color: #F40C48;
+	border: 1px solid #F40C48;
+	color:#fff;
+	margin-top: 10px;
+}
+
+
+.btnxoach{
+	background-color: #2876F8;
+	border: 1px solid #2876F8;
+	color:#fff;
+	margin-top: 10px;
+	margin-right: 70px;
+}
+.btnxoach:hover{
+	color:#fff;
+}
+.btnsuach:hover{
+	color:#fff;
+}
+.ten{
+	padding: 20px;
+}
+.noidungch{
+	padding-left: 20px;
+}
+.DapAn{
+	padding: 20px;
+	padding-top: 0px;
+}
+.btnthemch{
+	text-align:right;
+	padding-right: 30px; 
+	padding-bottom: 20px;
+}
+.icon-oke{
+	color:#0BD214;
+}
+.icon-remove{
+	color:red;
+}
+
+.nhaploai{
+	border-radius: 5px;
+	 border: 1px solid rgb(177, 175, 175); 
+	 height: 40px; 
+	 width: 800px;
+}
+
+.nhaploaimodel{
+	border-radius: 5px;
+	 border: 1px solid rgb(177, 175, 175); 
+	 height: 40px; 
+	 width: 400px;
+}
+.tbl-row{
+	text-align: right; 
+	padding-right: 250px;
+
+}
+.tbl-row2{
+	text-align: right; 
+	padding-right: 250px;
+	margin-top:50px;
+}
+a{
+	text-decoration: none;
+}
+.btnsuach12{
+	background-color: #F40C48;
+	border: 1px solid #F40C48;
+	color:#fff;
+	padding: 9px 15px 9px 15px;
+	
+}
+.btnsuach12:hover{
+	color:#fff;
+}
+.thoat{
+	padding: 10px; 
+	color:#fff; 
+	background-color: #2D71FB; 
+	display: inline;
+	border-radius: 3px;
+}
+.ct{
+	border-bottom: 1px solid #1268F7;
+	font-size: 14px;
+}
+#style{
+	font-weight: bold;
+}
+.ctbtl{
+	height: 700px;
+
+}
+.input{
+	border-radius: 5px;
+}
+
+#tenmucdo{
+	
+}

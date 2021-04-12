@@ -1,0 +1,143 @@
+
+.menu{
+	height: 50px;
+	width: 100%;
+	background-color: #295eaf;
+	line-height: 50px;
+}
+.footer{
+	padding-top: 10px;
+	height: 90px;
+	width: 100%;
+	background-color: #295eaf;
+	color: #fff;
+	text-align: center;
+}
+.name img{
+	width: 60px;
+	height: 40px;
+}
+.system{
+	font-weight: bold;
+
+}
+.btndangnhap{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.btndangnhap .ipspubmit{
+	font-size: 12px;
+	font-weight: bold;
+	background-color:  #fff;
+	border: 1px solid  #DED8D8;
+	padding: 4px;
+}
+.btndangnhap .ipspubmit:hover{
+	background-color:  #295eaf;
+	color: #fff;
+	font-weight: bold;
+	border: 1px solid  #295eaf;
+	font-size: 12px;
+	padding: 4px;
+}
+.phandangnhap{
+	background-color: #F3F3F3;
+	border-radius: 5px;
+	margin-top: 150px;
+	padding-top: 20px;
+}
+.ip1 , .ip2{
+	margin-left: 5px;
+	border: 1px solid #fff;
+	width: 200px;
+
+}
+.nhappass{
+	margin-top: 10px;
+}
+.login{
+	font-size: 20px;
+}
+.fa-home, .far,.glyphicon-earphone{
+	color: #FAE852;
+}
+.dchi{
+	font-size: 12px;
+}
+.than{
+	height: 600px;
+	width: 100%;
+	text-align: center;
+}
+.name{
+	color: #fff;
+	font-size: 18px;
+	padding-left: 0px;
+}
+.fa-graduation-cap{
+	font-size: 20px;
+
+}
+.body{
+	width: 100%;
+	height: 1000px;
+	background-color: #F1F3F5;
+}
+
+.welcome{
+	color: #295eaf;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 100px;
+}
+.input1, .input2, .btn1{
+	display: block;
+	width: 470px;
+	height: 40px;
+	border-radius: 7px;
+	border: 1px solid #9D9C9C;
+}
+.hoac{
+	color: #9D9C9C;
+}
+ .input2{
+ 	margin-bottom: 30px;
+ }
+.input1, .btn1{
+	margin-bottom: 20px;
+}
+.btn1{
+	background-color: #295eaf;
+	color: #fff;
+	font-size: 20px;
+
+}
+.btn2{
+	font-size: 17px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.dnpast,.hoac2{
+	text-align: center;
+}
+.btn3,.btn4,.btn5{
+	border-radius: 3px;
+	color: #fff;
+	margin-right: 32px;
+	margin-bottom: 20px;
+}
+.btn3{
+	background-color: #295eaf;
+	border: 1px solid #295eaf;
+}
+.btn4{
+	background-color: #EC274C;
+	border: 1px solid #EC274C;
+}
+.btn5{
+	background-color: #B232D2;
+	border: 1px solid #B232D2;
+}

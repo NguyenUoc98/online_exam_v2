@@ -1,0 +1,39 @@
+	.middle{
+		position: absolute;
+		
+		width: 100%;
+		transform: translateY(-50%);
+	}
+
+	.counting-sec{
+		
+		width: 100%;
+		background: linear-gradient(90deg,#3c6382,#82ccdd);
+	}
+
+	.inner-width{
+		max-width: 1200px;
+		margin: auto;
+		
+		text-align: center;
+	}
+	.coldb{
+		flex: 1;
+		padding: 20px;
+		color: #fff;
+		text-transform: uppercase;
+	}
+	.coldb i{
+		font-size: 40px;
+		color: #333;
+	}
+
+	.num{
+		font-size: 40px;
+		margin: 20px 0;
+
+	}
+	.coldb span{
+		
+		font-size: 18px;
+	}

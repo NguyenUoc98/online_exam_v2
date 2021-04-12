@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Thi Trực Tuyến</title>
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	{{--  <link rel="stylesheet" href="../../../public/css/giaodienthamgiathi.css"> --}}
+	 <style>
+	 	body{
+	 		font-family: 'Roboto Slab', serif;
+	 		background-color: #6cf;
+	 	}
+	 	.giaodienthi{
+	 		height: 360px;
+	 		width: 1000px;
+	 		position: absolute;
+	 		top: 50%;
+	 		left: 50%;
+	 		transform: translateX(-50%) translateY(-50%);
+	 		background: rgba(255,255,255,0.5);
+	 		padding: 20px;
+	 		border: 1px solid #08038C;
+	 		box-shadow: 0 0 8px 3px #fff;
+	 	}
+	 	.title{
+	 		padding-top: 20px;
+	 		text-align: center;
+	 		font-size: 29px;
+	 		text-transform: uppercase;
+	 		color: #08038C;
+	 	}
+	 	.question{
+	 		padding: 20px;
+	 		font-size: 22px;
+	 		background-color: #08038C;
+	 		border-radius: 20px;
+	 		margin: 10px 0 10px 0;
+	 		color: #f6f6f6;
+	 	}
+	 	.option{
+	 		width: 470px;
+	 		display: inline-block;
+	 		padding: 10px 0px 10px 15px;
+	 		vertical-align: middle;
+	 		background: rgba(255,255,255,0.5);
+	 		margin: 10px 0px 10px 10px;
+	 		color: #000000;
+	 		border-radius: 20px;
+	 	}
+	 	.option:hover{
+	 		background: #08038C;
+	 		color: #f6f6f6;
+	 	}
+	 	.next-btn{
+	 		border:none;
+	 		outline: none;
+	 		background: rgba(255,25,255,0.5);
+	 		width: 100px;
+	 		height: 35px;
+	 		border-radius: 20px;
+	 		cursor: pointer;
+	 		float: right;
+	 		margin: 10px;
+	 	}
+	 	.next-btn:hover{
+	 		background: #08038C;
+	 		color: #f6f6f6;
+	 	}
+	 	.result{
+	 		height: 100px;
+	 		text-align: center;
+	 		font-size: 75px;
+	 	}
+	 	.option input:checked .option{
+	 		background: #08038C;
+	 		color: #000;
+	 	}
+	 	.information{
+	 		text-align: center;
+	 		margin-top: 5px;
+	 	}
+	 	.counttime{
+	 		width: 140px;
+	 		height: 100px;
+	 		margin-left: 870px;
+	 		margin-top: -80px;
+	 	
+	 	}
+	 	
+	 	.gio{
+	 		margin-top: -65px;
+	 		margin-left: 40px;
+	 		font-size: 20px;
+	 		color: #08038C;
+	 		font-weight: bold;
+	 	}
+	 	.btnsubmitbaithi{
+	 		height: 30px;
+	 		margin-top: 10px;
+	 		padding-top: 7px;
+	 		padding-left: 7px;
+	 	}
+	 </style>
+</head>
+<body>
+	<form action=""  enctype="multipart/form-data">
+		<input type="hidden" name="_token()" value="{{csrf_token()}}">
+		<div id="quizContainer" class="container giaodienthi">
+		<div class="title">KỲ THI {{$dethi->kythi->tenky}}</div>
+		<div class="information"><b>Đề: {{$dethi->trangthai}} | <b>Môn: {{$dethi->monthi->tenmh}}</b> | <b>Số câu: {{$dethi->socau}} câu</b> | <b>Thời gian thi: {{$dethi->thoigianthi}} phút</b></b></div>
+		<div class="counttime">
+			<img src="../../imgs/khung.png"  class="khung_hoa" width="145" height="100" height="" alt="" >
+				<p class="gio"><span id="m"  ></span> :
+					<span id="s">00</span></p>
+		</div>
+		<div id="question" class="question">
+			
+		</div>
+		<label for="" class="option"><input type="radio" name="option" value="1"><span id="opt1"></span></label>
+		<label for="" class="option"><input type="radio" name="option" value="2"><span id="opt2"></span></label>
+		<label for="" class="option"><input type="radio" name="option" value="3"><span id="opt3"></span></label>
+		<label for="" class="option"><input type="radio" name="option" value="4"><span id="opt4"></span></label>
+		{{-- <button  class="next-btn " >Submit</button> --}}
+		<div id="nextButton" onclick="loadNextQuestion();" class="next-btn btnsubmitbaithi">Next Question</div>
+	</div>
+	</form>
+	<div id="result" class="container result" style="display: none"></div>
+	<script src="../../../public/js/question.js"></script>
+	<!-- <script src="quiz-script.js"></script> -->
+	<script>
+
+
+		var currentQuestion = 0;
+		var totQuestions = questions.length;
+
+		var container = document.getElementById('quizContainer');
+		var questionEl = document.getElementById('question');
+		var opt1 = document.getElementById('opt1');
+		var opt2 = document.getElementById('opt2');
+		var opt3 = document.getElementById('opt3');
+		var opt4 = document.getElementById('opt4');
+		var nextButton = document.getElementById('nextButton');
+		
+
+function loadQuestion (questionIndex){
+	var q= questions[questionIndex];
+	questionEl.textContent = (questionIndex +1) + '. ' + q.question;
+	opt1.textContent = q.option1;
+	opt2.textContent = q.option2;
+	opt3.textContent = q.option3;
+	opt4.textContent = q.option4;
+
+};
+
+function loadNextQuestion(){
+	var selectedOption = document.querySelector('input[type=radio]:checked');
+	if(!selectedOption){
+		alert('Vui lòng chọn đáp án để tiếp tục!');
+		return;
+	}
+	
+	selectedOption.checked = false;
+	currentQuestion++;
+	if(currentQuestion == totQuestions -1){
+		nextButton.textContent = 'Finish';
+	}
+	if(currentQuestion == totQuestions){
+		// container.style.display = 'none';
+		// resultCont.style.display = '';
+		// resultCont.textContent = 'Your Score: ' + score;
+		window.location="http://localhost:1412/thitructuyen/public/ketqua";
+		return;
+	}
+	loadQuestion(currentQuestion);
+	
+}
+loadQuestion(currentQuestion);
+	</script>
+
+
+<script language="javascript">
+ 	var m = "{{$dethi->thoigianthi}}";
+					
+	var s = 00; // Giây
+	var timeout = null; // Timeout
+				 
+	function stop(){
+			clearTimeout(timeout);
+	}
+	function start()
+	{
+					 
+	if (s === -1){
+				m -= 1;
+				s = 59;
+		}
+					
+	if (m == -1){
+		clearTimeout(timeout);
+		// alert('Hết giờ');
+		window.location.assign("http://localhost:1412/thitructuyen/public/ketqua"); 
+							
+		return false;
+	}
+				 
+	document.getElementById('m').innerText = m.toString();
+	document.getElementById('s').innerText = s.toString();
+				 
+						
+	timeout = setTimeout(function(){
+					s--;
+					start();
+			}, 1000);
+	}
+	start();
+				
+	</script>
+</body>
+</html>

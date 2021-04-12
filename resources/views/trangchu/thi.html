@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../static/css/giaodienhs.css">
+	<script type="text/javascript" src="../static/js/dongho.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<style>
+	.affix {
+      top: 10px;
+      left: 1050px;
+      z-index: 9999 !important; /*thiết lập thứ tự chồng lên nhau theo giá trị số,gtri cao hơn nằm lên trên*/
+  }
+	.nopbai{
+		padding: 10px 10px 10px 10px ;
+		background-color: rgb(27, 116, 226);
+		color:#fff;
+		margin-top: 145px;
+		margin-left: 80px;
+	}
+	.nopbai:hover{
+		padding: 10px 10px 10px 10px ;
+		background-color: rgb(27, 116, 226);
+		color:#fff;
+		margin-top: 145px;
+		margin-left: 80px;
+	}
+	.noidung{
+		background-color: rgb(122, 175, 240);
+	}
+	.khung_hoa{
+		margin-left: 30px;
+		margin-top: -10px;
+		float: left;
+		margin-right: -127px;
+		margin-bottom: 40px;
+	}
+	.affix .thongtin{
+		width: 252px;
+		height: 186px;
+		margin-top: 120px;
+	
+	}
+	.gio{
+	font-size: 21px;
+	font-weight: bold;
+	color: red;
+	padding-top: 50px;
+	
+	}
+	.tt{
+		font-weight: bold;
+	}
+</style>
+ 
+</head>
+<body>
+	
+	<div class="menu">
+		<div class="name">
+			<div class="col-md-1"></div>
+			<div class="col-md-5">
+				<a href="giaodienhs">Hệ thống thi trắc nghiệm trường THPT Nam Khoái Châu</a> 
+			</div>
+			<div class="col-md-5 email">
+				<i class="fas fa-mobile-alt"></i>&nbsp; Liên hệ : 0967978353&nbsp;&nbsp;&nbsp;&nbsp; <i class="far fa-envelope close-email"></i>&nbsp; Email : lethingocthaohy@gmail.com
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	</div>
+
+		<div class="container-fluid">
+			<div class="row menu2" >	
+					<div class="col-md-1"></div>
+					<div class="col-md-11 menutrai">
+						<ul style="font-size: 13px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<i class="fas fa-home"></i> &nbsp;&nbsp;<li>Trang chủ</li> &nbsp;>&nbsp;
+							<i class="fas fa-file-alt"></i> &nbsp;&nbsp;<li>Tham gia thi</li> 
+							<!-- &nbsp;>&nbsp; -->
+							 <!-- <i class="fas fa-book"></i>&nbsp;&nbsp;<li></li> -->
+						</ul>
+					</div>	 
+					
+			</div>
+			
+			<div class="container">
+				<div class="row tgiathi" >
+					<!-- <div class="col-md-2 socauhoi">
+					
+					</div> -->
+					<div class="col-md-9 cauhoi">
+					<form action="" method="Post">
+						<%i=1%>
+						<%results.forEach(function(rows){%>
+								<table class="table table-bordered">
+									<thead>
+									
+									  <tr class="noidung">
+										<th >Câu <%=i++%> :  <%=rows.NOIDUNG%></th>
+									  </tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="radio" name="<%=rows.ID_CAUHOI%>" value="A"> A. <%=rows.A%></td>
+										</tr>
+										<tr>
+											<td><input type="radio" name="<%=rows.ID_CAUHOI%>" value="B"> B. <%=rows.B%></td>
+										</tr>
+										<tr>
+											<td> <input type="radio" name="<%=rows.ID_CAUHOI%>" value="C"> C. <%=rows.C%></td>
+											
+										</tr>
+										<tr>
+											<td><input type="radio" name="<%=rows.ID_CAUHOI%>" value="D"> D. <%=rows.D%></td>
+										</tr>
+										
+									
+									</tbody>
+								  </table>
+								  <%})%>
+					</div>
+					
+					<div class="col-md-3 thongtin_de"  data-spy="affix" data-offset-top="140">
+						
+						<div>
+								<img src="../static/imgs/khung.png" width="180" class="khung_hoa" height="150" alt="" >
+							<p class="gio"><span id="m"  ></span> :
+								<span id="s">00</span></p>
+						
+						</div>
+					
+							 <table class="table table-bordered thongtin">
+								<thead>
+									
+								  <tr>
+									<td class="tt">Kỳ thi</td>
+									<td> <%=results[0].TENKY%></td>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td  class="tt">Môn thi</td>
+									<td><%=results[0].TENMH%></td>
+									
+								  </tr>
+								  <tr>
+									<td  class="tt">Ngày thi</td>
+									<td><%=results[0].NGAYTHI%></td>
+									
+								  </tr>
+								  <tr>
+									<td  class="tt">Thời gian thi</td>
+									<td><%=results[0].THOIGIANTHI%> phút</td>
+								  </tr>
+								  <tr  >
+										<td class="tt">Số câu</td>
+										<td><%=results[0].SOCAU%> câu</td>
+									  </tr>
+								</tbody>
+							  </table>
+							
+							<a href="ket_qua_thi"><button type="submit"  class="btn nopbai" onclick="stop()" >Nộp bài</button></a>
+						</form>
+					</div>
+				</div>
+				<script language="javascript">
+ 
+  
+						//var m = document.getElementById("m").value; // Phút
+					var m = "4";
+					
+						var s = 00; // Giây
+						var timeout = null; // Timeout
+				 
+						function stop(){
+								clearTimeout(timeout);
+						}
+						function start()
+						{
+					 
+						if (s === -1){
+									m -= 1;
+									s = 59;
+							}
+					
+						if (m == -1){
+							clearTimeout(timeout);
+							// alert('Hết giờ');
+							window.location.assign("/tgiathi/:id"); 
+							
+							return false;
+						}
+				 
+						document.getElementById('m').innerText = m.toString();
+						document.getElementById('s').innerText = s.toString();
+				 
+						
+						timeout = setTimeout(function(){
+								s--;
+								start();
+						}, 1000);
+				}
+				start();
+				
+				</script>
+			</div>
+			
+			
+	</div><br>
+		</div>
+			
+		
+		
+
+</body>
+</html>

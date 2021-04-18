@@ -13,7 +13,7 @@ class CreateCorrectAnswerTable extends Migration
      */
     public function up()
     {
-        Schema::create('correct_answer', function (Blueprint $table) {
+        Schema::create('correct_answers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('question_id')->index();
             $table->string('correct_answer');
@@ -28,6 +28,6 @@ class CreateCorrectAnswerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('correct_answer');
+        Schema::dropIfExists('correct_answers');
     }
 }

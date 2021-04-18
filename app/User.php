@@ -48,5 +48,4 @@ class User extends \TCG\Voyager\Models\User
     public function hocsinh(){
         return $this->hasOne('App\HocSinh','id','id');
     }
-    use Notifiable;
 }

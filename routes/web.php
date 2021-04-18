@@ -16,7 +16,6 @@ Route::get('/', [
     'uses' => 'HomeController@index'
 ]);
 
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
@@ -51,6 +50,14 @@ Route::prefix('exam')->group(function () {
         'as'   => 'exam.show',
         'uses' => 'ExamController@show'
     ]);
+    Route::get('doing/{id}', [
+        'as'   => 'exam.doing',
+        'uses' => 'ExamController@doing'
+    ]);
+    Route::get('result/{exam_id}', [
+        'as'   => 'exam.result',
+        'uses' => 'ExamController@getResult'
+    ]);
 });
 
 Route::post('comment/{id}', [
@@ -61,39 +68,24 @@ Route::post('comment/{id}', [
 
 Route::post('/postuser','UserController@postthemuser')->name('postuser');
 
-Route::get('/', function () {
-    return view('admin.layout.trangchuAD');
-});
-
 Route::get('lichsuthi/{id}','TrangchuController@getlichsuthi');
 
-Route::get('tructuyen/{id}','TrangchuController@getdiemthi');
-Route::get('dethi/thamgiathi/{id}','TrangchuController@thamgiathi');
-Route::get('dethi/thamgiathi/ajax/{id}','TrangchuController@thamgiathi1');
-
-// Route::get('/','TrangchuController@thamgiathisp');
-//  Route::get('ajax/sp','TrangchuController@thamgiathisp1');
-
-// Route::get('mypdf','DethiController@myPDF');
 
 Route::post('insertdapan','TrangchuController@bailamhocsinh');
 
-Route::get('kiemtra/{$id}','TrangchuController@getdiemthi');
 
 Route::get('pdf/{id}','TrangchuController@generatePDF');
-
-Route::post('ketqua','TrangchuController@tinhdiem');
 
 Route::get('sendmail','SendMailController@getmail');
 // Route::post('sendmail','SendMailController@send');
 Route::post('/sendmail','SendMailController@send');
 Route::post('/sendmail_ketqua','SendMailController@send');
 
-Route::get('dangnhap','TrangchuController@getdangnhap');
-
-Route::post('dangnhap','TrangchuController@postdangnhap');
-Route::get('dangxuat','TrangchuController@postdangxuat');
-Route::get('gvdangxuat','TrangchuController@gvdangxuat');
+//Route::get('dangnhap','TrangchuController@getdangnhap');
+//
+//Route::post('dangnhap','TrangchuController@postdangnhap');
+//Route::get('dangxuat','TrangchuController@postdangxuat');
+//Route::get('gvdangxuat','TrangchuController@gvdangxuat');
 
 
 Route::get('dashbroad_ad','ThongKeController@thongke_ad');
@@ -134,8 +126,8 @@ Route::get('chitiet', function () {
 
 
 Route::get('search','TrangchuController@getSearch');
-Route::get('thithptquocgia','TrangchuController@getthithptquocgia');
-Route::get('thihocki','TrangchuController@getthihocky');
+//Route::get('thithptquocgia','TrangchuController@getthithptquocgia');
+//Route::get('thihocki','TrangchuController@getthihocky');
 
 // Route::get('trangchu','MenuController@getmenu');
 
@@ -316,17 +308,10 @@ Route::group(['prefix'=>'giaovien'], function(){
 
 });
 
-
-
-//khai báo đường dẫn có tên controller và gọi đến hàm getController đc viết trong Controller, @ là cú pháp bắt buộc
-Route::get('controller','MyController@getController');
-
 //truyền tham số vào controller
 //tỉnh tổng stn và sth. stn,sth là tên 2 biến đc nhập trên thanh url và đc truyền vào trong hàm thamsoController trong MyController.php , thực thi câu lệnh tính tổng trong thamsoController()
 Route::get('controller/{stn}/{sth}','MyController@thamsoController');
 
-//gọi getView() trong MyController
-Route::get('view','MyController@getView');
 
 Route::get('cauhoi','CauhoiController@getCauhoi');
 Route::get('themcauhoi','CauhoiController@getThemcauhoi');
@@ -335,3 +320,5 @@ Route::get('suacauhoi','CauhoiController@getSuacauhoi');
 Route::get('loaicauhoi','MyController@getLoaicauhoi');
 
 // +
+
+Auth::routes();

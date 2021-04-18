@@ -8,7 +8,7 @@ class Exam extends Model
 {
     protected $fillable = [
         'semester_id',
-        'grade_id'.
+        'grade_id' .
         'subject_id',
         'teacher_id',
         'time',
@@ -18,31 +18,37 @@ class Exam extends Model
     ];
 
     const STATUS = [
-        'Test' => 0, // Thi thử
+        'Thi thử' => 0, // Thi thử
     ];
 
     //đề thi thuộc giáo viên nào
-    public function teacher() {
+    public function teacher()
+    {
         return $this->belongsTo(Teacher::class);
     }
 
-    public function subject() {
-        return $this->beLongsTo(Subject::class);
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
     }
 
-    public function semester() {
-        return $this->beLongsTo(Semester::class);
+    public function semester()
+    {
+        return $this->belongsTo(Semester::class);
     }
 
-    public function grade() {
-        return $this->beLongsTo(Grade::class);
+    public function grade()
+    {
+        return $this->belongsTo(Grade::class);
     }
 
-    public function comments() {
+    public function comments()
+    {
         return $this->hasMany(Comment::class)->with('user');
     }
 
-//    public function ctdethi(){
-//        return $this->hasOne('App\CtDeThi','id_de', 'id_de');
-//    }
+    public function questions()
+    {
+        return $this->belongsToMany(Question::class)->with('typeQuestion');
+    }
 }

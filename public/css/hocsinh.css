@@ -8,7 +8,7 @@ login*{
 	background: linear-gradient(90deg,#203A65,#1A3B6E);
 	height: 70px;
 	width: 100%;
-	
+
 }
 
 .add, .diachi{
@@ -44,13 +44,8 @@ login*{
 .login{
 	color: #000;
 	background-color: #ffb606;
-	width: 100px;
-	padding-left: 20px;
-	padding-top: 10px;
-	height: 40px;
 	font-weight: bold;
 	border-radius: 5px;
-	margin-top: 20px;
 }
 .login i{
 	margin-left: 3px;
@@ -80,7 +75,7 @@ login*{
 	padding-left: 20px;
 	padding-right: 20px;
 	font-size: 14px;
-	
+
 }
 .ngang span{
 	font-size: 12px;
@@ -119,17 +114,15 @@ login*{
 	padding-bottom: 10px;
 	border-radius: 0px 5px 5px 0px;
 	background-color: #979696;*/
-	
+
 }
 
 
 .anhbanner{
 	background-image: url("../imgs/bg_login.jpg");
-	width: 1490px;
 	height: 550px;
 	animation: slides 20s infinite;
 	animation-delay: 5s;
-
 }
 
 @keyframes slides{
@@ -138,15 +131,15 @@ login*{
 	}
 	50%{
 		background: url("../imgs/banner/banner1.jpg");
-		
+
 	}
 	75%{
 		background: url("../imgs/banner/2.jpg");
-		
+
 	}
 	100%{
 		background: url("../imgs/bg_login.jpg");
-		
+
 	}
 }
 
@@ -164,7 +157,7 @@ login*{
 }*/
 
 .banner{
-	
+
 	margin-top: 120px;
 }
 
@@ -216,7 +209,7 @@ login*{
 }
 
 .up{
-	
+
 	margin-top:370px;
 	margin-left: 135px;
 	position: absolute;
@@ -230,7 +223,7 @@ login*{
 }
 
 .canbtn{
-	
+
 	margin-top:530px;
 	margin-left: 135px;
 	position: absolute;
@@ -253,10 +246,7 @@ login*{
 }
 
 .thanh_menu{
-	
 	border-radius: 25px;
-	height: 40px;
-	
 }
 
 .thanh_menu a{
@@ -264,9 +254,6 @@ login*{
 	color: #000;
 	font-size: 15px;
 }
-
-
-
 
 .nav-tabs li a:hover{
   color: #000;
@@ -296,7 +283,7 @@ login*{
 	height: 400px;
 	width: 100%;
 	color: #fff;
-	
+
 
 }
 
@@ -400,7 +387,7 @@ login*{
 }
 
 .lgo i{
-	
+
 	font-size: 45px;
 	margin-top: 20px;
 }
@@ -410,12 +397,12 @@ login*{
 	margin-left: 20px;
 	border-radius: 0px;
 	padding-bottom: 10px;
-	
+
 }
 
 .down_menu span{
 	font-size: 14px;
-	
+
 }
 
 .ngang ul li .dropdown ul li{
@@ -438,7 +425,7 @@ login*{
 
 .emotion{
 	margin-bottom: -100px;
-	
+
 }
 .sodem{
 	color: #fff;
@@ -446,12 +433,12 @@ login*{
 	background: linear-gradient(90deg,#1A3B6E,#3D64A0);
 	text-align: center;
 	margin-bottom: -330px;
-	
+
 }
 
 .canso{
 	margin-top: 30px;
-	
+
 }
 
 .num{
@@ -462,11 +449,11 @@ login*{
 }
 
 .coldb{
-	
+
 		color: #fff;
 		text-transform: uppercase;
 		padding-bottom: 40px;
-		
+
 }
 
 .coldb i{
@@ -474,12 +461,12 @@ login*{
 		color: #ffb606;
 	}
 .coldb span{
-		
+
 		font-size: 18px;
 	}
 
 .fb1{
-	
+
 	width: 120px;
 	height: 120px;
 	margin-left: 110px;
@@ -538,22 +525,15 @@ login*{
 }
 
 .dethi{
-	width: 200px;
-	height: 270px;
 	border: 1px solid #ACABAB;
 	text-align: center;
 	margin-right: 70px;
 	margin-top: 10px;
-	margin-bottom: 30px;
 	box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 .hinhanh{
 	margin-left: 60px;
-}
-.dethi img{
-	margin-left: -10px;
-	
 }
 
 .tenmon{
@@ -595,7 +575,7 @@ login*{
 		font-size: 16px;
 		color: #fff;
 		border-radius: 50px 0px 0px 50px;
-		
+
 	}
 	.tbox, .btntk{
 		border: none;
@@ -638,9 +618,9 @@ login*{
 		font-size: 16px;
 		color: #000;
 		border-radius: 50px 0px 0px 50px;
-		
+
 	}
-	
+
 	.tbox1, .btntk1{
 		border: none;
 		outline: none;
@@ -674,7 +654,7 @@ login*{
 
 	.tintuc{
 		background-image: url(../imgs/banner/bg-feedback-student.jpg);
-		
+
 	}
 
 	.tieudetintuc{
@@ -683,7 +663,7 @@ login*{
 		width: 100%;
 		height: 40px;
 		background-color: #D0CDCD;
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 	}
 
 	.tieudetintuc h3{
@@ -737,7 +717,7 @@ login*{
 
 	.col_ngaydang{
 		margin-top: 20px;
-		
+
 	}
 	.ngaydang{
 		background-color: #E8E8E8;
@@ -761,7 +741,7 @@ login*{
 		margin-top: 30px;
 		margin-bottom: 10px;
 	}
-	
+
 	.phantrangtintuc span{
 		color: #fff;
 		background-color: #002147;
@@ -791,7 +771,7 @@ login*{
 		margin-left: 30px;
 		margin-right: 10px;
 	}
-	
+
 	.main_gioithieu p{
 		margin-left: 30px;
 	}
@@ -803,7 +783,7 @@ login*{
 
 
 	/*CSS SLIDER*/
-	
+
 	.imgslider{
 	 	width: 300px;
 	 	height: 250px;

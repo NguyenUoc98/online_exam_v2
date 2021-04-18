@@ -17,9 +17,9 @@
 <link href="{{ asset('css/OwlCarousel/dist/assets/owl.carousel.min.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('css/OwlCarousel/dist/assets/owl.theme.default.min.css') }}" rel="stylesheet" type="text/css">
 <style>
-	
+
 </style>
- 
+
 <script>
 (function(s, u, b, i, z){
   u[i]=u[i]||function(){
@@ -37,7 +37,7 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 
 </head>
 <body>
-	
+
 		<div class="menu-top">
 			<div class="row">
 				<div class="col-md-1"></div>
@@ -66,16 +66,16 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 					<a href="file:///D:/XAMPP/htdocs/thitructuyen/resources/views/trangchu/trangchu.html">
 						<img src="{{ asset('imgs/logo.png') }}" alt="">
 					</a>
-					
+
 				</div>
 				<div class="col-md-8 ngang"  >
 					<ul>
 						<li><a href="">TRANG CHỦ </a> </li>
 						<li><a href="">GIỚI THIỆU </a></li>
-						
+
 						<li>
 							 <div class="dropdown">
-							   
+
 							    	<a href="" class="dropdown-toggle" data-toggle="dropdown">KỲ THI </a>
 							    <span class="caret"></span>
 							    <ul class="dropdown-menu down_menu">
@@ -98,7 +98,7 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 
 						<li>
 							 <div class="dropdown">
-							   
+
 							    	<a href="" class="dropdown-toggle" data-toggle="dropdown">TÀI LIỆU </a>
 							    <span class="caret"></span></button>
 							    <ul class="dropdown-menu down_menu">
@@ -127,23 +127,23 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 								<i class="fas fa-search"></i>
 								<input type="text" class="tbox" placeholder="  Nhập từ khóa tìm kiếm">
 								<input type="submit" value="Tìm kiếm" class="btntk">
-								
+
 							</div>
 						</li>
-						
+
 					</ul>
 				</div>
 
 				<div class="col-md-1 ngang">
-					
+
 				</div>
 			</div>
 			</div>
 
-			
+
 
 			<div class="row anhbanner"">
-				
+
 				<div class="col-md-12 banner">
 					<h3 class="dream">FOLLOW YOUR DREAM</h3>
 					<div class="up">
@@ -156,7 +156,7 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 					</p>
 				</div>
 			</div>
-			
+
 
 			<div class="container">
 				<div class="row main_test" >
@@ -172,15 +172,15 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 						  <div class="tab-content">
 							    <div id="home" class="tab-pane fade in active">
 							     <div class="row hinhanh">
-							     	
+
 							     	<div class="col-md-3 dethi thumb">
 							     		<img src="{{ asset('imgs/monhoc/ngoaingu.jpg') }}" width="199" height="150" alt="">
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
@@ -191,9 +191,9 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
@@ -203,9 +203,9 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
@@ -216,9 +216,9 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
@@ -228,9 +228,9 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
@@ -241,9 +241,9 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
@@ -253,9 +253,9 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
@@ -266,27 +266,27 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
 							     	</div>
 							     </div>
-							     
+
 							    </div>
 							    <div id="menu1" class="tab-pane fade">
-							     	
+
 							     	<div class="row hinhanh">
 							     		<div class="col-md-3 dethi">
 							     		<img src="{{ asset('imgs/monhoc/toan.jpg') }}" width="199" height="150" alt="">
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
@@ -297,9 +297,9 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
@@ -310,9 +310,9 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
@@ -323,9 +323,9 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
@@ -336,9 +336,9 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
@@ -352,9 +352,9 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
@@ -365,39 +365,39 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 							     		<p class="tenmon">Ngoại Ngữ</p>
 							     		<p class="title">Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút</p>
 							     		<p class="danhgia">
-							     			
+
 							     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-							     			
+
 
 							     			<i class="fas fa-users hscmt"></i> 134
 							     		</p>
 							     	</div>
 
-								     	
+
 							    	</div>
-							     
+
 							    </div>
 
-							    
+
 						  </div>
-						  
-						  		
+
+
 				</div>
 			</div>
 </div>
-			
+
 		<div class="row loiich">
 			<div class="col-md-4"></div>
 			<div class="col-md-5 camnhan">
-				
+
 				<h3>CÁC TIỆN ÍCH THI TRỰC TUYẾN</h3>
 
 			</div>
 
 
 			<div class="col-md-3"></div>
-			
-		</div>	
+
+		</div>
 		<div class="row gt">
 			<div class="col-md-12">
 				<p>Giúp các em học sinh nâng cao kiến thức, đạt kết quả cao, phát huy năng lực và yêu thích học tập. Đồng thời tiết kiệm tối đa thời gian, và chi phí.</p>
@@ -458,27 +458,27 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 	</div>
 
 
-	
 
-		
+
+
 
 	<div class="container-fluid thisinhcamnhan">
 		<div class="container">
 			<div class="row emotion">
 				<div class="col-md-4"></div>
 				<div class="col-md-5 camnhan">
-					
+
 					<h3>CẢM NHẬN THÍ SINH VỀ CHÚNG TÔI</h3>
 				</div>
 
 				<div class="col-md-3"></div>
-		</div>	
+		</div>
 
 		<div class="row abc">
 			<div class="col-md-4">
 				<div class="card middle">
 					<div class="front anhfb1">
-						
+
 						<p class="fb1"><img src="{{ asset('imgs/fb1.png') }}" alt=""></p>
 						<p class="tenthisinh">Lê Thị Ngọc Thảo</p>
 						<p class="cmt"><span class="icon fa fa-quote-left"> </span>&nbsp;&nbsp; Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy. Without farther she exposed saw man led. Along on happy could cease green oh.Gay own additions education satisfied the perpetual. If he cause manor happy. Without farther she exposed saw man led. Along on happy could cease green oh. &nbsp;<span class="icon fa fa-quote-right"> </span></p>
@@ -548,8 +548,8 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 		</div>
 	</div>
 
-	
-	
+
+
 
 	<div class="row counting-sec sodem">
 			<div class="container canso">
@@ -580,11 +580,11 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 		</div>
 
 	<div class="footer">
-		
+
 		<div class="container phanchan">
-			
+
 			<div class="col-md-3">
-				
+
 				<div class="col-md-12 footer_lienhe">
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<p><img src="{{ asset('imgs/logo-light.png') }}" alt="" ></p>
@@ -599,7 +599,7 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 								<i class="fas fa-paper-plane"></i>
 								<input type="text" class="tbox1" placeholder="  Nhập email">
 								<input type="submit" value="Email" class="btntk1">
-								
+
 						</div>
 					</p>
 				</div>
@@ -616,7 +616,7 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 			</div>
 
 			<div class="col-md-3">
-				
+
 				<div class="col-md-12 chinhsach">
 					<h4><b>LỢI ÍCH</b></h4>
 					<p><i class="fas fa-th-large"></i>	&nbsp;Quản lý ngân hàng câu hỏi</p>
@@ -634,8 +634,8 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 					</div>
 			</div>
 		</div>
-		<div class="thelast">	
-			<p class="cop"><i class="far fa-copyright"></i> Copyright 2019 Develop by Ngoc Thao  
+		<div class="thelast">
+			<p class="cop"><i class="far fa-copyright"></i> Copyright 2019 Develop by Ngoc Thao
 				<span>
 					<i class="fas fa-envelope "></i>
 					<i class="fab fa-youtube-square"></i>
@@ -646,14 +646,14 @@ subiz('setAccount', 'acqdqbopxrdhtmizzgjf');
 		</div>
 	</div>
 	<script type="text/javascript">
-		
+
 		$(".num").counterUp()({
                 delay: 10,
                 time: 1000
             });
     </script>
 
-    <script>   
+    <script>
 
 
 	$(document).ready(function(){

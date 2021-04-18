@@ -6,7 +6,7 @@
                 <img src="{{ Voyager::image($exam->subject->image) }}" class="picture">
             </div>
 
-            <div class="col-md-5 ">
+            <div class="col-md-5 text-2xl">
                 <h3 class="thongtinctde" style="text-transform: uppercase;"><b>ĐỀ {{ $exam->semester->name }}</b></h3>
                 <p><b>Môn thi:</b> {{ $exam->subject->name }}</p>
                 <p><b>Số câu:</b> {{ $exam->num_question }} câu</p>
@@ -26,7 +26,7 @@
                 </p>
                 @if(Auth::check())
                     <marquee behavior="alternate" width="10%">>></marquee>
-                    <a href="thamgiathi/{{ $exam->id}}">
+                    <a href="{{ route('exam.doing', $exam->id) }}">
                         <button type="button" class="btn warning" id="giohang">THAM GIA NGAY</button>
                     </a>
                     <marquee behavior="alternate" width="10%"><<</marquee>
@@ -42,7 +42,7 @@
 
             <div class="col-md-3 chitiet">
                 <p><b class="chuhotro">Đề Thi Liên Quan</b></p>
-                <p class="h4"></p>
+                <p class="h4 mt-4"></p>
                 @foreach($otherExams as $otherExam)
                     <div class="row row_chitiet">
                         <div class="col-md-4">
@@ -102,7 +102,7 @@
                         @foreach($comments as $comment)
                             <div class="col-md-11">
                                 <div class="media">
-                                    <div class="media-left media-top">
+                                    <div class="media-left media-top w-1/6">
                                         <img src="{{ Voyager::image($comment->user->avatar) }}" class="media-object" width="60px" height="60px">
                                     </div>
                                     <div class="media-body">

@@ -63,7 +63,7 @@ class TrangchuController extends Controller
        ->where('kythi.tenky','like','%'.$req->key.'%')
        ->orWhere('monthi.tenmh','like','%'.$req->key.'%')
         ->get()->toArray();
-    	
+
     	return view('admin.layout.search',compact('dethi'));
     }
 
@@ -87,7 +87,7 @@ class TrangchuController extends Controller
     		]
     	);
         //email và pass do ng dùng nhập lấy theo name input
-    	$chungthuc =  array('email' => $req->email , 'password'=> $req->password );  
+    	$chungthuc =  array('email' => $req->email , 'password'=> $req->password );
     	if(Auth::attempt($chungthuc)){
             if(Auth::user()->quyen == '0')
                 return redirect('trangchu');
@@ -95,7 +95,7 @@ class TrangchuController extends Controller
              return redirect('giaovien/dash/dashbroad_gv');
             if (Auth::user()->quyen == '2')
                  return redirect('dashbroad_ad');
-            
+
     	}
     	else{
     		return redirect()->back()->with(['flag'=>'danger','message','Đăng nhập không thành công']);
@@ -113,7 +113,7 @@ class TrangchuController extends Controller
         return view('admin.layout.dangnhap');
     }
 
-     
+
      public function getthithptquocgia(){
 
         $dethi = DB::table('dethi')
@@ -122,13 +122,13 @@ class TrangchuController extends Controller
        ->select('monthi.tenmh','monthi.hinhanh','kythi.tenky','socau', 'thoigianthi','id_de')
        ->where('kythi.id_ky','=', '4')
        ->where('trangthai','like', '%'.'Thi thử'.'%')
-        
+
         ->get()->toArray();
 
       return view('admin.tonghopdethi.thithptquocgia',['dethi'=>$dethi]);
      }
 
-     
+
       public function getthihocky(){
 
         $dethi = DB::table('dethi')
@@ -137,13 +137,14 @@ class TrangchuController extends Controller
        ->select('monthi.tenmh','monthi.hinhanh','kythi.tenky','socau', 'thoigianthi','id_de')
        ->where('kythi.id_ky','=', '5')
        ->where('trangthai','like', '%'.'Thi thử'.'%')
-        
+
         ->get()->toArray();
 
       return view('admin.tonghopdethi.thihocky',['dethi'=>$dethi]);
      }
 
      public function thamgiathi($id){
+         dd($id);
          $dethi = DeThi::find($id);
          $user= Auth::id();
           $soluongcau = DB::table('ctdethi')
@@ -177,7 +178,7 @@ class TrangchuController extends Controller
 
          $ctbailam= DB::table('ctbailam')
         ->where('ctbailam.id_de','=',$id)->get()->pluck('da_chon','id_cauhoi');
-         
+
       return view('admin.thitructuyen.loadcauhoithi',['dethi'=>$dethi, 'ctdethi'=>$ctdethi,'user'=>$user,'ctbailam'=>$ctbailam]);
 
      }
@@ -200,21 +201,21 @@ class TrangchuController extends Controller
         ->where('id_user','=',$id)
         ->select('ctbailam.id_cauhoi','ctbailam.da_chon')->get()->pluck('da_chon','id_cauhoi');
 
-        
+
       if (!$request->id_cauhoi || !ctype_digit($request->id_cauhoi)) {
         //place a code here to inform the user about it
       }
 
-      
+
                $ctbailam = new CtBaiLam();
               $ctbailam->id_cauhoi = $request->id_cauhoi;
               $ctbailam->da_chon = $request->da_chon;
               $ctbailam->id_de = $request->id_de;
               $ctbailam->id_user = $id;
               $ctbailam->save();
-     
-      
- 
+
+
+
       return view('admin.thitructuyen.ketquathi',['ctde'=>$ctde]);
 
   }
@@ -230,7 +231,7 @@ class TrangchuController extends Controller
        ->get()->toArray();
 
         $socau = DB::table('dethi')->where('id_de','=',$id)->get()->pluck('socau');
-       
+
         $id_user = Auth::id();
         $idmh = DB::table('dethi')
         ->where('id_de','=', $id)->get()->pluck('id_mh');
@@ -239,8 +240,8 @@ class TrangchuController extends Controller
         ->where('id_user','=',$id_user)
         ->select('ctbailam.id_cauhoi','ctbailam.da_chon')->get()->pluck('da_chon','id_cauhoi');
           // dd($dapanchon);
-        
-     
+
+
         // $dapandung = DB::table('dethi')
         // ->join('ctdethi','ctdethi.id_de','=','dethi.id_de')
         // ->join('cauhoi','ctdethi.id_cauhoi','=','cauhoi.id_cauhoi')
@@ -268,9 +269,10 @@ class TrangchuController extends Controller
         $tinhdiem= (10/$socau[0])*$dung;
         $lamtrondiem = round($tinhdiem,2);
         // round($diem,2);
-        $tyle= ($lamtrondiem *100)/10;
+        $tyle= ($lamtrondiem * 100)/10;
         $lamtrontyle = round($tyle,2);
         // dd($lamtrontyle);
+
         $ketqua = new KetQua();
         $ketqua->id_de = $id;
         $ketqua->id_hs = $id_user;
@@ -290,7 +292,7 @@ class TrangchuController extends Controller
 
         $email="ngocthaohehe@gmail.com";
         // dd($diem);
-   
+
     return view('admin.thitructuyen.ketquathi',['lamtrondiem'=>$lamtrondiem, 'count'=>$count,'lamtrontyle'=>$lamtrontyle,'ctde'=>$ctde, 'dung'=>$dung, 'email'=>$email]);
   }
 
@@ -319,8 +321,8 @@ class TrangchuController extends Controller
         ->where('id_user','=',$id_user)
         ->select('ctbailam.id_cauhoi','ctbailam.da_chon')->get()->pluck('da_chon','id_cauhoi');
           // dd($dapanchon);
-   
-     
+
+
         $dapandung = DB::table('dethi')
         ->join('ctdethi','ctdethi.id_de','=','dethi.id_de')
         ->join('cauhoi','ctdethi.id_cauhoi','=','cauhoi.id_cauhoi')
@@ -329,11 +331,11 @@ class TrangchuController extends Controller
         ->get()->pluck('noidung','id_cauhoi');
         // dd($dapandung);
 
-        
+
         // foreach ($dapandung as $question => $answer) {
         //     if (!isset($dapanchon[$question]) || $dapanchon[$question] != $answer) {
         //         echo sprintf("Sai ở câu: %s. Đáp án  là: %s\n", $question, $answer);
-             
+
         //     }
         // }
 
@@ -350,7 +352,7 @@ class TrangchuController extends Controller
      //  return view('admin.layout.sp1',['khoi'=>$khoi]);
 
       public function generatePDF($id){
-        
+
         $mucdo = MucDo::all();
          $dethi = DeThi::find($id);
 
@@ -366,11 +368,11 @@ class TrangchuController extends Controller
              array_push($id_cauhoi, (integer)$item->id_cauhoi);
              // dd($id_cauhoi);
         }
-         $dapan = Db::table('dapandung')->whereIn('id_cauhoi', $id_cauhoi)->get(); 
+         $dapan = Db::table('dapandung')->whereIn('id_cauhoi', $id_cauhoi)->get();
 
       $pdf = PDF::loadView('admin.dethi.exportPDFctdethi',compact('dethi','ctdethi','dapan'));
       $pdf->save(storage_path().'_filename.pdf');
       return $pdf->download('dethi.pdf');
       }
-    
+
 }

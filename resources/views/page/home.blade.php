@@ -1,8 +1,7 @@
 @extends('admin.layout.index')
 
 @section('body')
-
-    <div class="row anhbanner" style="width: 1550px">
+    <div class="anhbanner">
         <div class="col-md-12 banner">
             <h3 class="dream">FOLLOW YOUR DREAM</h3>
             <div class="up">
@@ -16,45 +15,27 @@
         </div>
     </div>
 
-    <div class="container-fluid main_test_container">
+    <div class="container-fluid main_test_container pb-12">
         <div class="container ">
             <div class="row main_test">
-                <div class="col-md-12">
-                    <div class="thanh_menu">
-                        <ul class="nav nav-tabs">
-                            @foreach($semesters as $key => $semester)
-                                <li class="thpt{{ $key + 1 }} @if($key == 0) active @endif"><a data-toggle="tab" class="kt{{ $key }}" href="#menu{{ $key }}">{{ $semester->name }}</a></li>
-                            @endforeach
-                        </ul>
-                    </div>
-
-                    <div class="tab-content">
+                <div class="thanh_menu">
+                    <ul class="nav nav-tabs">
                         @foreach($semesters as $key => $semester)
-                            <div id="menu{{ $key }}" class="tab-pane fade @if($key == 0)in active @endif">
-                                <div class="row hinhanh" style="text-align: center">
-                                    @forelse($semester->exams as $exam)
-                                        <a href="{{ route('exam.show', $exam->id) }}" style="color: #000">
-                                            <div class="col-md-3 dethi">
-                                                <img src="{{ Voyager::image($exam->subject->image) }}" width="199" height="150" alt="">
-                                                <p class="tenmon">{{ $exam->subject->name }}</p>
-                                                <p class="title">Đề thi {{ $semester->name }} gồm {{ $exam->num_question }} câu, thời gian
-                                                    thi {{ $exam->time }} phút</p>
-                                                <p class="danhgia">
-
-                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                        class="far fa-star"></i>
-                                                    <i class="fas fa-users hscmt"></i> 134
-                                                </p>
-                                            </div>
-                                        </a>
-                                    @empty
-                                        <div>Không có nội dung</div>
-                                    @endforelse
-                                </div>
-                            </div>
+                            <li class="thpt{{ $key + 1 }} @if($key == 0) active @endif">
+                                <a data-toggle="tab" class="kt{{ $key }}" href="#menu{{ $key }}">
+                                    {{ $semester->name }}
+                                </a>
+                            </li>
                         @endforeach
-                    </div>
+                    </ul>
+                </div>
+
+                <div class="tab-content">
+                    @foreach($semesters as $key => $semester)
+                        <div id="menu{{ $key }}" class="tab-pane fade @if($key == 0)in active @endif">
+                            @livewire('semester-exams', ['semester' => $semester])
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

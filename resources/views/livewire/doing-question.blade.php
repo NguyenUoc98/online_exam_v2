@@ -27,15 +27,16 @@
             </div>
         </div>
 
-        <div class="flex justify-between items-center">
+        <div class="md:flex justify-between items-center">
             {{ $questions->links() }}
 
             @if($questions->currentPage() == $questions->lastPage())
-                <a href="{{ route('exam.result', $exam->id) }}">
-                    <button class="bg-green-500 font-bold px-10 py-3 rounded-full text-white" type="button">
+                <div class="text-center">
+                    <a href="{{ route('exam.result', $exam->id) }}"
+                       class="bg-green-500 font-bold px-10 py-3 rounded-full text-white">
                         NỘP BÀI
-                    </button>
-                </a>
+                    </a>
+                </div>
             @endif
         </div>
     @endforeach

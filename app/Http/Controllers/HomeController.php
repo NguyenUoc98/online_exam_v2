@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use App\Models\Semester;
 use App\Models\Slide;
 use Illuminate\Http\Request;
@@ -14,15 +15,12 @@ class HomeController extends Controller
         return view('page.home',compact('semesters', 'slides'));
     }
 
-    public function introduce() {
-        return view('page.introduce');
-    }
-
     public function news() {
         return view('page.news');
     }
 
-    public function contact() {
-        return view('page.contact');
+    public function page($slug) {
+        $page = Page::whereSlug($slug)->firstOrFail();
+        return view('page.show', compact('page'));
     }
 }

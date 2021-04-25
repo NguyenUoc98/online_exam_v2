@@ -10,7 +10,7 @@
                         @foreach($items as $menuItem)
                             <?php
                             $parameters = $menuItem->getParametersAttribute();
-                            if (!is_null($parameters)) {
+                            if (isset($parameters->model) && !is_null($parameters->model)) {
                                 $dataType = \Voyager::model('DataType')->where('name', '=', $parameters->model)->first();
                                 $subMenu = app($dataType->model_name)->all();
                             } else {

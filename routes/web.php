@@ -25,19 +25,14 @@ Route::get('home', [
     'uses' => 'HomeController@index'
 ]);
 
-Route::get('introduce', [
-    'as'   => 'introduce',
-    'uses' => 'HomeController@introduce'
-]);
-
 Route::get('news', [
     'as'   => 'news',
     'uses' => 'HomeController@news'
 ]);
 
-Route::get('contact', [
-    'as'   => 'contact',
-    'uses' => 'HomeController@contact',
+Route::get('page/{slug}', [
+    'as'   => 'page',
+    'uses' => 'HomeController@page',
 ]);
 
 Route::get('semester/{slug}', [

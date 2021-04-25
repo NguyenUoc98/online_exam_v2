@@ -1,46 +1,80 @@
-<div class="menu-top">
-    <div class="row h-available">
-        <div class="col-md-1"></div>
-        <div class="col-md-1 doc">
-            <p class="add"><i class="fas fa-map"></i> ADDRESS</p>
-            <p class="diachi">Hưng Yên</p>
-        </div>
-        <div class="col-md-1 doc">
-            <p class="add"><i class="fas fa-envelope-open"></i> EMAIL</p>
-            <p class="diachi a">thao@gmail.com </p>
-        </div>
-        <div class="col-md-1 doc">
-            <p class="add"><i class="fas fa-phone"></i> CONTACT</p>
-            <p class="diachi">0967978353</p>
-        </div>
-
-        <div class="flex items-center justify-end h-available pr-10">
-            @guest
-                <a href="{{ route('login') }}">
-                    <div class="login px-8 py-4"><i class="fas fa-user mr-2"></i>Đăng nhập</div>
+<div class="bg-yellow-500 py-8 w-full z-20">
+    <div data-spy="affix" data-offset-top="85">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center">
+                <a href="{{ route('home') }}">
+                    <img src="{{asset('/imgs/logo-light.png') }}" alt="">
                 </a>
-                <a href="{{ route('register') }}">
-                    <div class="login px-8 py-4"><i class="fas fa-user mr-2"></i>Đăng ký</div>
-                </a>
-            @else
+                <div class="ngang">
+                    <ul>
+                        @foreach($items as $menuItem)
+                            <?php
+                            $parameters = $menuItem->getParametersAttribute();
+                            if (!is_null($parameters)) {
+                                $dataType = \Voyager::model('DataType')->where('name', '=', $parameters->model)->first();
+                                $subMenu = app($dataType->model_name)->all();
+                            } else {
+                                $subMenu = [];
+                            }
+                            ?>
+                            @if(empty($subMenu))
+                                <li><a href="{{ $menuItem->link() }}">{{ $menuItem->title }}</a></li>
+                            @else
+                                <li>
+                                    <div class="dropdown">
+                                        <a href="#" class="dropdown-toggle"
+                                           data-toggle="dropdown">{{ $menuItem->title }}</a>
+                                        <span class="caret"></span>
+                                        <ul class="dropdown-menu down_menu" style="min-width: 170px">
+                                            @foreach($subMenu as $menu)
+                                                <li style="width: 100%">
+                                                    <a href="{{ route('semester.show', $menu->slug) }}"><span>{{ $menu->name }}</span>
+                                                        <i class="fas fa-angle-right ic1" style="float:right"></i></a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </li>
+                            @endif
+                        @endforeach
 
-                <p class="checklichsu flex items-center cursor-pointer text-white font-bold">
-                    <img src="{{ Voyager::image(Auth::user()->avatar) }}" width="35" height="35" class="mr-3 rounded-full">
-                    <span>{{ Auth::user()->name }} <i class="fa-sort-down fas mb-2 ml-1"></i></span>
-                </p>
-                <div class="menunguoidung">
-                    {{ menu('user', 'layouts.user_menu') }}
+                        <li>
+                            <form method="get" id="searchform" action="search">
+                                <div class="email-box">
+                                    <i class="fas fa-search"></i>
+                                    <input type="text" class="tbox" name="key" placeholder="  Nhập từ khóa tìm kiếm">
+                                    <input type="submit" value="Tìm kiếm" class="btntk">
+
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
                 </div>
+                <div class="flex items-center justify-end h-available">
+                    @guest
+                        <a href="{{ route('login') }}">
+                            <div class="login px-8 py-4"><i class="fas fa-user mr-2"></i>Đăng nhập</div>
+                        </a>
+                        <a href="{{ route('register') }}">
+                            <div class="login px-8 py-4"><i class="fas fa-user mr-2"></i>Đăng ký</div>
+                        </a>
+                    @else
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="login px-8 py-4">Đăng xuất <i class="fas fa-sign-out-alt"></i></button>
-                </form>
-            @endguest
+                        <p class="checklichsu flex items-center cursor-pointer text-white font-bold">
+                            <img src="{{ Voyager::image(Auth::user()->avatar) }}" width="35" height="35"
+                                 class="mr-3 rounded-full">
+                            <span>{{ Auth::user()->name }} <i class="fa-sort-down fas mb-2 ml-1"></i></span>
+                        </p>
+                        <div class="menunguoidung z-10">
+                            {{ menu('user', 'layouts.user_menu') }}
+                        </div>
+                    @endguest
+                </div>
+            </div>
         </div>
     </div>
+    <span id="scrolltopbtn" class="gotop"><i class="fas fa-arrow-up"></i></span>
 </div>
-{{ menu('header', 'layouts.sub_menu') }}
 
 <style>
     .gotop {
@@ -71,7 +105,7 @@
         color: #000;
         position: fixed;
         top: 65px;
-        right:0;
+        right: 0;
         min-width: 233px;
         z-index: 1;
         line-height: 50px;

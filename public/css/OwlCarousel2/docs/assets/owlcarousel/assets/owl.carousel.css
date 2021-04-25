@@ -46,10 +46,9 @@
     -webkit-backface-visibility: hidden;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none; }
-
-    
-    
-  
+  .owl-carousel .owl-item img {
+    display: block;
+    width: 100%; }
   .owl-carousel .owl-nav.disabled,
   .owl-carousel .owl-dots.disabled {
     display: none; }
@@ -66,16 +65,10 @@
   .owl-carousel .owl-nav button.owl-next,
   .owl-carousel button.owl-dot {
     background: none;
-    color: #ffb606 ;
+    color: inherit;
     border: none;
     padding: 0 !important;
-    font-size: 50px;
-    font-weight: bold;
-     }
-
-     .owl-carousel button.owl-dot{
-       visibility: hidden;
-     }
+    font: inherit; }
   .owl-carousel.owl-loaded {
     display: block; }
   .owl-carousel.owl-loading {

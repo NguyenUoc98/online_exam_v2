@@ -1,18 +1,16 @@
 @extends('admin.layout.index')
 
 @section('body')
-    <div class="anhbanner">
-        <div class="col-md-12 banner">
-            <h3 class="dream">FOLLOW YOUR DREAM</h3>
-            <div class="up">
-                <h2 class="online">Learn From Best Online</h2>
-                <h2 class="training">Training Exam</h2>
+    <div class="owl-carousel owl-theme max-h-screen">
+        @foreach($slides as $slide)
+            <div class="item max-h-screen">
+                <img class="object-cover max-h-screen z-10" src="{{ Voyager::image($slide->image) }}">
+                <div class="absolute z-20 top-0 ml-56">
+                    <h3 class="dream mt-56">{{ $slide->title }}</h3>
+                    <h2 class="online">{{ $slide->content }}</h2>
+                </div>
             </div>
-            <p class="canbtn">
-                <a href="trangchu"><span class="view">VIEW MORE</span></a>
-                <a href="trangchu"><span class="thamgia">JOIN EXAMIN</span></a>
-            </p>
-        </div>
+        @endforeach
     </div>
 
     <div class="container-fluid main_test_container pb-12">
@@ -41,168 +39,99 @@
         </div>
     </div>
 
-    <div class="row loiich">
-        <div class="col-md-4"></div>
-        <div class="col-md-5 camnhan">
-            <h3>CÁC TIỆN ÍCH THI TRỰC TUYẾN</h3>
+    <div class="mt-20">
+        <div class="loiich mb-1">
+            <div class="camnhan mx-auto text-4xl w-1/3">
+                <h3>CÁC TIỆN ÍCH THI TRỰC TUYẾN</h3>
+            </div>
         </div>
-        <div class="col-md-3"></div>
-    </div>
-    <div class="row gt">
-        <div class="col-md-12">
+        <div class="gt mt-0">
             <p>Giúp các em học sinh nâng cao kiến thức, đạt kết quả cao, phát huy năng lực và yêu thích học tập. Đồng
                 thời tiết kiệm tối đa thời gian, và chi phí.</p>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-2">
-            <img src="{{ asset('imgs/banner/bg-utility_.png') }}" alt="" width="250" height="400">
-        </div>
-        <div class="col-md-8">
-            <div class="row ctloi">
-                <div class="col-md-4">
-                    <img src="{{ asset('imgs/banner/icon-kiem-tra-thi-8.png') }}" alt="">
+        <div class="grid grid-cols-12">
+            <div class="col-span-2">
+                <img src="{{ asset('imgs/banner/bg-utility_.png') }}" alt="" width="250" height="400">
+            </div>
+            <div class="col-span-8 grid grid-cols-3">
+                <div class="ctloi">
+                    <img src="{{ asset('imgs/banner/icon-kiem-tra-thi-8.png') }}" alt="" class="mx-auto">
                     <p>Phù hợp với quy trình thi</p>
                 </div>
-                <div class="col-md-4">
-                    <img src="{{ asset('imgs/banner/icon-cau-hoi-da-dang-6.png') }}" alt="">
+                <div class="ctloi">
+                    <img src="{{ asset('imgs/banner/icon-cau-hoi-da-dang-6.png') }}" alt="" class="mx-auto">
                     <p>Hỗ trợ phần mềm nhanh, hiệu quả</p>
                 </div>
-                <div class="col-md-4">
-                    <img src="{{ asset('imgs/banner/icon-hoc-tu-vung-2.png') }}" alt="">
+                <div class="ctloi">
+                    <img src="{{ asset('imgs/banner/icon-hoc-tu-vung-2.png') }}" alt="" class="mx-auto">
                     <p>Tránh gian lận trong thi cử</p>
                 </div>
-            </div>
-            <div class="row ctloi">
-                <div class="col-md-4">
-                    <img src="{{ asset('imgs/banner/icon-nhac-lich-hoc-4.png') }}" alt="">
+
+                <div class="ctloi">
+                    <img src="{{ asset('imgs/banner/icon-nhac-lich-hoc-4.png') }}" alt="" class="mx-auto">
                     <p>Nhắc nhở lịch học hằng ngày</p>
                 </div>
-                <div class="col-md-4">
-                    <img src="{{ asset('imgs/banner/icon-noi-dung-9.png') }}" alt="">
+                <div class="ctloi">
+                    <img src="{{ asset('imgs/banner/icon-noi-dung-9.png') }}" alt="" class="mx-auto">
                     <p>Quản lý ngân hàng câu hỏi</p>
                 </div>
-                <div class="col-md-4">
-                    <img src="{{ asset('imgs/banner/icon-thong-ke-ky-nang-5.png') }}" alt="">
+                <div class="ctloi">
+                    <img src="{{ asset('imgs/banner/icon-thong-ke-ky-nang-5.png') }}" alt="" class="mx-auto">
                     <p>Quản lý đề thi đa dạng</p>
                 </div>
-            </div>
-            <div class="row ctloi">
-                <div class="col-md-4">
-                    <img src="{{ asset('imgs/banner/icon-tra-tu-dien-1.png') }}" alt="">
+
+                <div class="ctloi">
+                    <img src="{{ asset('imgs/banner/icon-tra-tu-dien-1.png') }}" alt="" class="mx-auto">
                     <p>Tiết kiệm thời gian</p>
                 </div>
-                <div class="col-md-4">
-                    <img src="{{ asset('imgs/banner/icon-tuong-tac-cao-7.png') }}" alt="">
+                <div class="ctloi">
+                    <img src="{{ asset('imgs/banner/icon-tuong-tac-cao-7.png') }}" alt="" class="mx-auto">
                     <p>Tính tương tác cao(Chat, Bình luận)</p>
                 </div>
-                <div class="col-md-4">
-                    <img src="{{ asset('imgs/banner/icon-xem-live-stream-3.png') }}" alt="">
+                <div class="ctloi">
+                    <img src="{{ asset('imgs/banner/icon-xem-live-stream-3.png') }}" alt="" class="mx-auto">
                     <p>Tương tác và giải đáp trực tiếp</p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-2">
-            <img src="{{ asset('imgs/banner/bg-utility_.png') }}" width="250" height="400" alt="">
-        </div>
-    </div>
-
-    <div class="container-fluid thisinhcamnhan">
-        <div class="container">
-            <div class="row emotion">
-                <div class="col-md-4"></div>
-                <div class="col-md-5 camnhan">
-
-                    <h3>CẢM NHẬN THÍ SINH VỀ CHÚNG TÔI</h3>
-                </div>
-
-                <div class="col-md-3"></div>
-            </div>
-
-            <div class="row abc">
-                <div class="col-md-4">
-                    <div class="card middle">
-                        <div class="front anhfb1">
-
-                            <p class="fb1"><img src="{{ asset('imgs/fb1.png') }}" alt=""></p>
-                            <p class="tenthisinh">Lê Thị Ngọc Thảo</p>
-                            <p class="cmt"><span class="icon fa fa-quote-left"> </span>&nbsp;&nbsp; Trước tiên cho em
-                                gửi lời cảm ơn chân thành tới đội ngũ phát trển đã tạo ra cho em một môi trường
-                                học tập bổ ích và lý thú cùng với số lượng câu hỏi đa dạng rất phù hợp với xu
-                                hướng hiện nay. Hệ thống có các bài giảng, bài tập, bài thi qua đó giúp em cải thiện
-                                được điểm số khả quan. &nbsp;<span class="icon fa fa-quote-right"> </span></p>
-                            <p class="decoration"></p>
-                        </div>
-                        <div class="back">
-                            <div class="back-content middle">
-                                <h2>EXAMIN</h2>
-                                <span>Join Exam Now !</span>
-                                <div class="sm">
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                    <a href="#"><i class="fab fa-youtube"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card middle">
-                        <div class="front anhfb2">
-                            <p class="fb1"><img src="{{ asset('imgs/fb2.jpg') }}" alt=""></p>
-                            <p class="tenthisinh">Nguyễn Thị Quỳnh</p>
-                            <p class="cmt"><span class="icon fa fa-quote-left"> </span>&nbsp;&nbsp; Trước tiên cho em
-                                gửi lời cảm ơn chân thành tới đội ngũ phát trển đã tạo ra cho em một môi trường
-                                học tập bổ ích và lý thú cùng với số lượng câu hỏi đa dạng rất phù hợp với xu
-                                hướng hiện nay. Hệ thống có các bài giảng, bài tập, bài thi qua đó giúp em cải thiện
-                                được điểm số khả quan. &nbsp;<span class="icon fa fa-quote-right"> </span></p>
-                            <p class="decoration"></p>
-                        </div>
-                        <div class="back">
-                            <div class="back-content middle">
-                                <h2>EXAMIN</h2>
-                                <span>Join Exam Now !</span>
-                                <div class="sm">
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                    <a href="#"><i class="fab fa-youtube"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card middle">
-                        <div class="front anhfb3">
-                            <p class="fb1"><img src="{{ asset('imgs/fb3.png') }}" alt=""></p>
-                            <p class="tenthisinh">Đoàn Thị Linh</p>
-                            <p class="cmt"><span class="icon fa fa-quote-left"> </span>&nbsp;&nbsp; Trước tiên cho em
-                                gửi lời cảm ơn chân thành tới đội ngũ phát trển đã tạo ra cho em một môi trường
-                                học tập bổ ích và lý thú cùng với số lượng câu hỏi đa dạng rất phù hợp với xu
-                                hướng hiện nay. Hệ thống có các bài giảng, bài tập, bài thi qua đó giúp em cải thiện
-                                được điểm số khả quan. &nbsp;<span class="icon fa fa-quote-right"> </span></p>
-                            <p class="decoration"></p>
-                        </div>
-                        <div class="back">
-                            <div class="back-content middle">
-                                <h2>EXAMIN</h2>
-                                <span>Join Exam Now !</span>
-                                <div class="sm">
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                    <a href="#"><i class="fab fa-youtube"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-span-2">
+                <img src="{{ asset('imgs/banner/bg-utility_.png') }}" width="250" height="400" alt="">
             </div>
         </div>
     </div>
+
+    <div class="flex items-center justify-around sodem">
+        <div class="coldb">
+            <i class="fas fa-user-graduate"></i>
+            <div class="num">678</div>
+            <span>MEMBERS</span>
+        </div>
+
+        <div class="coldb">
+            <i class="fas fa-question-circle"></i>
+            <div class="num">1234</div>
+            <span>QUESTIONS</span>
+        </div>
+
+        <div class="coldb">
+            <i class="fas fa-file-alt"></i>
+            <div class="num">750</div>
+            <span>EXAMS</span>
+        </div>
+
+        <div class="coldb">
+            <i class="fas fa-users"></i>
+            <div class="num">1345</div>
+            <span>VISITORS</span>
+        </div>
+    </div>
+
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            items: 1,
+            dots: false
+        })
+    </script>
 @stop

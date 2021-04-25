@@ -23,7 +23,7 @@ class SemesterExams extends Component
 
     public function render()
     {
-        $exams = $this->semester->exams()->paginate(5);
+        $exams = $this->semester->exams()->paginate(10);
         return view('livewire.semester-exams')->with([
             'exams' => $exams
         ]);

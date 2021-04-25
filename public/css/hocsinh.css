@@ -257,6 +257,9 @@ nav {
 .thanh_menu .nav-tabs {
     background-color: #D0CDCD;
     border-radius: 25px;
+    display: -webkit-box;
+    display: -webkit-inline-box;
+    overflow-x: scroll;
 }
 
 
@@ -264,6 +267,7 @@ nav {
     background-image: url('../imgs/gbfooter.jpg');
     width: 100%;
     color: #fff;
+    background-size: cover;
 }
 
 .footer a:hover {

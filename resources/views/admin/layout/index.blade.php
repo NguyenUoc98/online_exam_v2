@@ -18,23 +18,6 @@
     <link rel="stylesheet" href="/css/OwlCarousel2/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="/css/OwlCarousel2/dist/assets/owl.theme.default.min.css">
     <script src="/css/OwlCarousel2/dist/owl.carousel.min.js"></script>
-    <style>
-        .main_test_container {
-            background-image: url('/imgs/banner/bg-feedback-student.jpg');
-            margin-bottom: 30px;
-        }
-
-        .bgsearch {
-            background-image: url('/imgs/banner/bg-feedback-student.jpg');
-        }
-
-        .login {
-            float: left;
-            margin-left: 15px;
-        }
-
-    </style>
-
 </head>
 <body>
 {{ menu('header', 'layouts.menu') }}

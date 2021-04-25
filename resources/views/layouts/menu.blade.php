@@ -5,7 +5,7 @@
                 <a href="{{ route('home') }}">
                     <img src="{{asset('/imgs/logo-light.png') }}" alt="">
                 </a>
-                <div class="ngang">
+                <div class="ngang hidden md:block">
                     <ul>
                         @foreach($items as $menuItem)
                             <?php

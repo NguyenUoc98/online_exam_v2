@@ -1,231 +1,241 @@
 
-  #main{
-      margin-top: 50px;
-      margin-bottom: 50px;
-    }
+#main {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
-    .picture{
-      border: 1px solid black;
-    }
-    .canmonthi{
-      margin-top: 10px;
-      margin-bottom: 0px;
-    }
-    #giohang{
-      margin-bottom: 30px;
-      margin-top: 10px;
-    }
-    #giohang:hover{
-      color: #fff;
-    }
+.picture {
+    border: 1px solid black;
+}
 
-    .thongtinctde{
-      margin-top: 20px;
+.canmonthi {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
 
-    }
-    .note{
-      margin-top: 15px;
-    }
-    marquee{
-      color: red;
-      font-size: 15px;
+#giohang {
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
 
-    }
+#giohang:hover {
+    color: #fff;
+}
 
-    .thembinhluan{
-        margin-top: -30px;
-        max-width: 700px;
-    }
-    .thembinhluan ul li a{
-        background-color: #acadb1;
-        color: #fff;
-        border-radius: 25px;
-    }
-
-    .thembinhluan ul li a:hover{
-      background-color: #4A4D6A;
-      color: #fff;
-    }
-    .chuthaoluan{
-      margin-left: 20px;
-      margin-top: 20px;
-    }
-    .f,.g,.L{
-      border: 1px solid #C0BFBF;
-    }
-
-  .input-group{
-  width:670px;
- }
-
-
-
- /*.vietcmt{
-  margin-top: 30px;
-   background-color: #189eff;
-   color: #fff;
-   border: 1px solid #189eff;
-   padding: 4px 7px 4px 7px;
- }
-*/
- #danhgia input, textarea{
- border-radius: 4px;
- border: 1px solid #D8D3D3;
- padding: 5px;
-
- }
-.chuhotro{
-  color: #FFF;
-  background-color: #189eff ;
-  padding: 10px;
+.thongtinctde {
+    margin-top: 20px;
 
 }
-.noibat{
- background-color: #F0F0F0;
- padding: 20px;
-  margin-top: -10px;
-}
-.chitiet img{
-  width: 70px;
-  height: 90px;
-}
-.chitiet .row_chitiet{
 
- margin-bottom: 15px;
+.note {
+    margin-top: 15px;
 }
-.chitiet #row_chitiet b{
-  color: #189eff;
+
+marquee {
+    color: red;
+    font-size: 15px;
+
 }
-.chitiet .row_chitiet a{
-  color:#000;
-  font-weight: bold;
+
+.thembinhluan ul li a {
+    background-color: #acadb1;
+    color: #fff;
+    border-radius: 25px;
 }
-.chitiet .row_chitiet a:hover{
-  color: #000 ;
+
+.thembinhluan ul li a:hover {
+    background-color: #4A4D6A;
+    color: #fff;
 }
-.row_chitiet span{
-  padding: 2px;
+
+.chuthaoluan {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.f, .g, .L {
+    border: 1px solid #C0BFBF;
+}
+
+.input-group {
+    width: 670px;
+}
+
+
+/*.vietcmt{
+ margin-top: 30px;
   background-color: #189eff;
   color: #fff;
-  font-size: 13px;
+  border: 1px solid #189eff;
+  padding: 4px 7px 4px 7px;
 }
-
-.chitiet .row_chitiet img{
-  border: 1px solid grey;
-}
-.chitiet .row_chitiet img:hover{
-   border: 1px solid grey;
-}
-
-
-
-.chunoibat{
-  border: 1px solid ;
-  padding: 10px;
-  color: #FFFFFF;
-  background-color: #189eff ;
-
-}
-.sanpham{
-  margin-top: 20px;
-}
-.h4{
-  height: 3px;
-  margin-top: -5px;
-  background-color: #DAD7D7;
-}
-.special{
-   margin-top: 30px;
-}
-.nav-tabs{
-  font-weight: bold;
-
-}
-.hiendatmua{
-margin-top: 200px;
-}
-
-.giohang{
-
-  margin-bottom: 30px;
-}
-.giohang .col-md-5{
-  margin-top: -10px;
-
-}
-.giohang .warning{
-   color: #FFFFFF;
-  background-color: #189eff;
-
-}
-.giohang .warning a{
-   color: #FFF;
-}
-.giohang .warning a:hover{
-   color: #FFF;
-  font-weight: normal;
-}
-.giohang .warning:hover{
-  background-color: #FC7431;
+*/
+#danhgia input, textarea {
+    border-radius: 4px;
+    border: 1px solid #D8D3D3;
+    padding: 5px;
 
 }
 
-.sp1{
-   padding-left: 60px;
+.chuhotro {
+    color: #FFF;
+    background-color: #189eff;
+    padding: 10px;
+
+}
+
+.noibat {
+    background-color: #F0F0F0;
+    padding: 20px;
+    margin-top: -10px;
+}
+
+.chitiet img {
+    width: 70px;
+    height: 90px;
+}
+
+.chitiet .row_chitiet {
+
+    margin-bottom: 15px;
+}
+
+.chitiet #row_chitiet b {
+    color: #189eff;
+}
+
+.chitiet .row_chitiet a {
+    color: #000;
+    font-weight: bold;
+}
+
+.chitiet .row_chitiet a:hover {
+    color: #000;
+}
+
+.row_chitiet span {
+    padding: 2px;
+    background-color: #189eff;
+    color: #fff;
+    font-size: 13px;
+}
+
+.chitiet .row_chitiet img {
+    border: 1px solid grey;
+}
+
+.chitiet .row_chitiet img:hover {
+    border: 1px solid grey;
+}
+
+
+.chunoibat {
+    border: 1px solid;
+    padding: 10px;
+    color: #FFFFFF;
+    background-color: #189eff;
+
+}
+
+.sanpham {
+    margin-top: 20px;
+}
+
+.h4 {
+    height: 3px;
+    margin-top: -5px;
+    background-color: #DAD7D7;
+}
+
+.special {
+    margin-top: 30px;
+}
+
+.nav-tabs {
+    font-weight: bold;
+
+}
+
+.hiendatmua {
+    margin-top: 200px;
+}
+
+.giohang {
+
+    margin-bottom: 30px;
+}
+
+.giohang .col-md-5 {
+    margin-top: -10px;
+
+}
+
+.giohang .warning {
+    color: #FFFFFF;
+    background-color: #189eff;
+
+}
+
+.giohang .warning a {
+    color: #FFF;
+}
+
+.giohang .warning a:hover {
+    color: #FFF;
+    font-weight: normal;
+}
+
+.giohang .warning:hover {
+    background-color: #FC7431;
+
+}
+
+.sp1 {
+    padding-left: 60px;
     padding-top: 7px;
     padding-bottom: 10px;
 
 }
 
-.sp1:hover{
-  border: 1px solid #189eff;
+.sp1:hover {
+    border: 1px solid #189eff;
 }
 
 
-.f,.g,.t,.L{
-   padding:  8px 15px 8px 15px;
-  color: #070606;
-  background-color:#EEECEC;
-  margin-right: 10px;
-}
-.f:hover{
-   color: #fff;
-  background-color:#29487d;
-}
-.g:hover{
-  color: #fff;
-  background-color:#E40B2A;
- }
-
-.L:hover{
-   color: #fff;
-  background-color:#0DDD1C;
-
-}
-.giohang .col-md-5 a:hover{
-  color: #fff;
-}
-.themvaogio:hover{
-  color: #FFF;
-  background-color: #189eff ;
-}
-.sach , .table_chitiet{
-  margin-top: 20px;
-}
-#menu2 h4{
-   margin-top: 20px;
+.f, .g, .t, .L {
+    padding: 8px 15px 8px 15px;
+    color: #070606;
+    background-color: #EEECEC;
 }
 
-.picture{
-  width: 320px;
-  height: 425px;
-  margin-bottom: 20px;
-  border: 1px solid #B1ADAD;
+.giohang .col-md-5 a:hover {
+    color: #fff;
 }
-.picture1{
-  width: 70px;
-  height: 90px;
-  padding: 3px;
-  border: 1px solid #D6D4D4;
-  margin-right: 10px;
+
+.themvaogio:hover {
+    color: #FFF;
+    background-color: #189eff;
+}
+
+.sach, .table_chitiet {
+    margin-top: 20px;
+}
+
+#menu2 h4 {
+    margin-top: 20px;
+}
+
+.picture {
+    width: 320px;
+    height: 425px;
+    margin-bottom: 20px;
+    border: 1px solid #B1ADAD;
+}
+
+.picture1 {
+    width: 70px;
+    height: 90px;
+    padding: 3px;
+    border: 1px solid #D6D4D4;
+    margin-right: 10px;
 }

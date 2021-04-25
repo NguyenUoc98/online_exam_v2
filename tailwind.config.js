@@ -10,7 +10,12 @@ module.exports = {
         './resources/**/*.vue',
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                'primary': '#002147',
+                'primary-light': '#023773'
+            }
+        },
         maxHeight: {
             '48': '12rem',
             '52': '13rem',
@@ -38,7 +43,8 @@ module.exports = {
             '72': '18rem',
             '80': '20rem',
             '96': '24rem',
-            'available': '-webkit-fill-available'
+            'available': '-webkit-fill-available',
+            'auto': 'auto'
         }
     },
     variants: {},

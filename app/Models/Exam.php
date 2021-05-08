@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\FormLayoutTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Exam extends Model
 {
+    use FormLayoutTrait;
+
     protected $fillable = [
         'semester_id',
         'grade_id' .
@@ -18,8 +21,25 @@ class Exam extends Model
     ];
 
     const STATUS = [
-        'Thi thử' => 0, // Thi thử
+        'Đề thi thử'    => 0, // Thi thử
+        'Đề chính thức' => 1
     ];
+
+    /**
+     * Set Formdield for Question Details
+     */
+    public function formFields()
+    {
+        return $this->field('exam_belongsto_semester_relationship', 3)
+            ->field('exam_belongsto_subject_relationship', 3)
+            ->field('exam_belongsto_grade_relationship', 3)
+            ->field('exam_belongsto_teacher_relationship', 3)
+            ->field('num_question', 3)
+            ->field('time', 3)
+            ->field('date', 3)
+            ->field('status', 3)
+            ->get();
+    }
 
     //đề thi thuộc giáo viên nào
     public function teacher()
@@ -49,6 +69,11 @@ class Exam extends Model
 
     public function questions()
     {
-        return $this->belongsToMany(Question::class)->with('typeQuestion');
+        return $this->belongsToMany(Question::class)->withPivot('order')->orderBy('order');
+    }
+
+    public function rates()
+    {
+        return $this->hasMany(Rate::class)->with('user');
     }
 }

@@ -2,6 +2,9 @@
 
 namespace App;
 
+use App\Models\Exam;
+use App\Models\Result;
+use App\Models\UserAnswer;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -37,15 +40,20 @@ class User extends \TCG\Voyager\Models\User
         'email_verified_at' => 'datetime',
     ];
 
-    public function thaoluan(){
-        return $this->hasMany('App\ThaoLuanDeThi','id', 'id');
+    public function answer ($examId, $questionId) {
+        return $this->hasMany(UserAnswer::class)->where('exam_id', $examId)->where('question_id', $questionId);
     }
 
-    public function giaovien(){
-        return $this->hasOne('App\GiaoVien','id','id');
+    /**
+     * Lấy lịch sử thi
+     */
+    public function results()
+    {
+        return $this->hasMany(Result::class);
     }
 
-    public function hocsinh(){
-        return $this->hasOne('App\HocSinh','id','id');
+    public function examsWithAnswer()
+    {
+        return $this->belongsToMany(Exam::class, 'user_answers');
     }
 }

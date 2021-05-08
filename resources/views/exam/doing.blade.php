@@ -77,7 +77,7 @@
         @livewire('doing-question', ['exam' => $exam])
     </div>
     <script>
-        var m = "{{ $exam->time }}";
+        var m = "1";
         var s = 0; // Giây
         var timeout = null; // Timeout
 
@@ -95,7 +95,8 @@
                 clearTimeout(timeout);
 
                 // alert('Hết giờ');
-                window.location.assign("http://localhost:1412/thitructuyen/public/ketqua");
+                $(window).off('beforeunload');
+                window.location.assign("{{ route('exam.result', $exam->id) }}");
                 return false;
             }
 
@@ -109,5 +110,12 @@
         }
 
         start();
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(window).on('beforeunload', function(e){
+                return e.originalEvent.returnValue = "Quá trình nạp tiền đang được xử lý. Vui lòng không tắt trình duyệt...";
+            });
+        });
     </script>
 @endsection

@@ -6,24 +6,16 @@
             </div>
 
             <div class="grid grid-cols-2">
-                <label class="option m-1 @if($answerSelected == 'A') choosed @endif"
-                       wire:click="$emit('selectAnswer', {{ $question->id }}, 'A')">
-                    <span id="opt">A. {!! $question->answer_a !!}</span>
+                @foreach($question->answers as $key=>$answer)
+                    @php
+                        $sellected = auth()->user()->answer($exam->id, $question->id)->first();
+                        $answerSelected = $sellected ? $sellected->answer_selected : -1;
+                    @endphp
+                <label class="option m-1 @if($answerSelected == $answer->id) choosed @endif"
+                       wire:click="$emit('selectAnswer', {{ $question->id }}, {{ $answer->id }})">
+                    <span id="opt">{{ chr(65 + $key) }}. {!! $answer->answer !!}</span>
                 </label>
-                <label class="option m-1 @if($answerSelected == 'B') choosed @endif"
-                       wire:click="$emit('selectAnswer', {{ $question->id }}, 'B')">
-                    <span id="opt">B. {!! $question->answer_b !!}</span>
-                </label>
-                @if($question->typeQuestion->id != 4)
-                    <label class="option m-1 @if($answerSelected == 'C') choosed @endif"
-                           wire:click="$emit('selectAnswer', {{ $question->id }}, 'C')">
-                        <span id="opt">C. {!! $question->answer_c !!}</span>
-                    </label>
-                    <label class="option m-1 @if($answerSelected == 'D') choosed @endif"
-                           wire:click="$emit('selectAnswer', {{ $question->id }}, 'D')">
-                        <span id="opt">D. {!! $question->answer_d !!}</span>
-                    </label>
-                @endif
+                @endforeach
             </div>
         </div>
 

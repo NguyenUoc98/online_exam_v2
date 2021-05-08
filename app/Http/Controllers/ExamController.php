@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\DeThi;
 use App\Models\Exam;
+use App\Models\Result;
 use App\Models\UserAnswer;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,8 +20,16 @@ class ExamController extends Controller
             ->where('semester_id', $exam->semester_id)->get()->except($exam->id);
 
         $comments = $exam->comments()->paginate(10);
+        $rates = $exam->rates();
+        $totalRate = $rates->count();
+        $rating = $rates->get()->countBy('rating')
+            ->map(function ($value) use ($totalRate) {
+                return $value * 100 / $totalRate;
+            });
 
-        return view('exam.show', compact('exam', 'otherExams', 'comments'));
+        $rateAble = $rates->get()->where('user_id', auth()->id())->count() ? false : true;
+
+        return view('exam.show', compact('exam', 'otherExams', 'comments', 'rates', 'rating', 'totalRate', 'rateAble'));
     }
 
     /**
@@ -30,18 +40,41 @@ class ExamController extends Controller
      */
     public function doing($id)
     {
+        // Check xem đã làm đề này chưa
+        // Qua 30 phút mới được làm lại
+        $lastResult = auth()->user()->results()->where('exam_id', $id)->orderBy('created_at', 'desc')->first();
+        if ($lastResult) {
+            if ($lastResult->created_at->diffInMinutes(Carbon::now()) < 10) {
+                return redirect()->back()->with([
+                    'msg' => "Bạn vừa làm đề thi này, đợi 30 phút để quay lại"
+                ]);
+            } else {
+                auth()->user()->examsWithAnswer()->detach($id);
+            }
+        }
+
         $exam = Exam::with(['semester:id,name', 'subject:id,name'])->findOrFail($id);
         $questions = $exam->questions()->paginate(1);
         return view('exam.doing', compact('exam', 'questions'));
     }
 
-
+    /**
+     * Tạo kết quả thi
+     *
+     * @param $exam_id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getResult($exam_id)
     {
         $exam = Exam::with(['semester:id,name', 'subject:id,name'])->findOrFail($exam_id);
-        $correctAnswer = $exam->questions()->with('correctAnswer')->get()
+        $correctAnswer = $exam->questions()
+            ->with([
+                'answers' => function ($q) {
+                    return $q->where('is_correct', 1);
+                }])
+            ->get()
             ->mapWithKeys(function ($value) {
-                return [$value->id => $value->correctAnswer->correct_answer];
+                return [$value->id => $value->answers->first()->id];
             });
 
         $userAnswer = UserAnswer::where([
@@ -54,6 +87,22 @@ class ExamController extends Controller
         $totalQuestion = $correctAnswer->count();
         $numCorrect = $totalQuestion - $correctAnswer->diffAssoc($userAnswer)->count();
         $point = round(($numCorrect * 10) / $totalQuestion, 2);
+
+        // Xếp loại (Mặc định là Yếu)
+        $academic_power = 0;
+        foreach (Result::ACADEMIC_POWER as $key => $item) {
+            if ($point > $item['min'] && $point <= $item['max']) {
+                $academic_power = $key;
+                break;
+            }
+        }
+
+        auth()->user()->results()->create([
+            'exam_id'        => $exam_id,
+            'num_correct'    => $numCorrect,
+            'score'          => $point,
+            'academic_power' => $academic_power
+        ]);
 
         return view('exam.result', compact('totalQuestion', 'numCorrect', 'point', 'exam'));
     }

@@ -11,7 +11,6 @@ class DoingQuestion extends Component
     use WithPagination;
 
     public $exam;
-    public $answerSelected;
 
     protected $listeners = ['selectAnswer'];
 
@@ -27,7 +26,6 @@ class DoingQuestion extends Component
 
     public function selectAnswer($questionId, $answer = '')
     {
-        $this->answerSelected = $answer;
         $userAnswer = UserAnswer::where([
             ['user_id', auth()->id()],
             ['exam_id', $this->exam->id],

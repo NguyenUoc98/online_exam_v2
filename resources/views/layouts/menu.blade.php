@@ -53,10 +53,10 @@
                 <div class="flex items-center justify-end h-available">
                     @guest
                         <a href="{{ route('login') }}">
-                            <div class="login px-8 py-4"><i class="fas fa-user mr-2"></i>Đăng nhập</div>
+                            <div class="login px-8 py-4 mx-1"><i class="fas fa-user mr-2"></i>Đăng nhập</div>
                         </a>
                         <a href="{{ route('register') }}">
-                            <div class="login px-8 py-4"><i class="fas fa-user mr-2"></i>Đăng ký</div>
+                            <div class="login px-8 py-4 mx-1"><i class="fas fa-user mr-2"></i>Đăng ký</div>
                         </a>
                     @else
 

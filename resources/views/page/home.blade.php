@@ -19,7 +19,7 @@
         <div class="container ">
             <div class="row main_test">
                 <div class="thanh_menu">
-                    <ul class="nav nav-tabs">
+                    <ul class="md:overflow-hidden nav nav-tabs overflow-scroll">
                         @foreach($semesters as $key => $semester)
                             <li class="thpt{{ $key + 1 }} @if($key == 0) active @endif">
                                 <a data-toggle="tab" class="kt{{ $key }}" href="#menu{{ $key }}">

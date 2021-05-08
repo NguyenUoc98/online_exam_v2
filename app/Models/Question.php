@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
+    const TYPE = [
+        'an_option'   => 1,
+        'many_option' => 2
+    ];
+
     use FormLayoutTrait;
 
     /**
@@ -15,31 +20,17 @@ class Question extends Model
     public function formFields()
     {
         return $this
-            ->beginDiv('row')
-                ->beginDiv('col-md-12')
-                    ->field('question_belongsto_type_question_relationship', 3)
-                    ->field('question_belongsto_level_relationship', 3)
-                    ->field('question_belongsto_grade_relationship', 3)
-                    ->field('question_belongsto_subject_relationship', 3)
-                ->endDiv()
-            ->endDiv()
+            ->field('question_belongsto_level_relationship', 3)
+            ->field('question_belongsto_grade_relationship', 3)
+            ->field('question_belongsto_subject_relationship', 3)
+            ->field('type_question_id', 3)
             ->field('content', 12)
-            ->beginDiv('row')
-                ->beginDiv('col-md-12')
-                    ->field('answer_a', 6)->field('answer_b', 6)
-                    ->field('answer_d', 6)->field('answer_c', 6)
-                ->endDiv()
-            ->endDiv()
             ->get();
     }
 
-    public function typeQuestion()
+    public function answers()
     {
-        return $this->belongsTo(TypeQuestion::class);
+        return $this->hasMany(Answer::class);
     }
 
-    public function correctAnswer()
-    {
-        return $this->hasOne(CorrectAnswer::class);
-    }
 }

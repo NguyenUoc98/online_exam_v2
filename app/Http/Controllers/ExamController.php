@@ -44,9 +44,13 @@ class ExamController extends Controller
         // Qua 30 phút mới được làm lại
         $lastResult = auth()->user()->results()->where('exam_id', $id)->orderBy('created_at', 'desc')->first();
         if ($lastResult) {
-            if ($lastResult->created_at->diffInMinutes(Carbon::now()) < 10) {
+            if ($lastResult->created_at->diffInMinutes(Carbon::now()) < 30) {
                 return redirect()->back()->with([
-                    'msg' => "Bạn vừa làm đề thi này, đợi 30 phút để quay lại"
+                    'notify' => [
+                        'title' => 'Lỗi khi tham gia thi',
+                        'msg'   => 'Bạn vừa làm đề thi này, hãy đợi 30 phút để tiếp tục!',
+                        'icon'  => 'error'
+                    ]
                 ]);
             } else {
                 auth()->user()->examsWithAnswer()->detach($id);
@@ -64,8 +68,9 @@ class ExamController extends Controller
      * @param $exam_id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function getResult($exam_id)
+    public function saveResult(Request $request)
     {
+        $exam_id = $request->get('exam_id');
         $exam = Exam::with(['semester:id,name', 'subject:id,name'])->findOrFail($exam_id);
         $correctAnswer = $exam->questions()
             ->with([
@@ -104,6 +109,13 @@ class ExamController extends Controller
             'academic_power' => $academic_power
         ]);
 
-        return view('exam.result', compact('totalQuestion', 'numCorrect', 'point', 'exam'));
+        return redirect()->route('exam.get-result', $exam_id);
+    }
+
+    public function getResult($exam_id)
+    {
+        $exam = Exam::findOrFail($exam_id);
+        $result = $exam->results()->first();
+        return view('exam.result', compact('result', 'exam'));
     }
 }

@@ -1,4 +1,4 @@
-@extends('admin.layout.index')
+@extends('layouts.master')
 
 @section('body')
     <div class="owl-carousel owl-theme max-h-screen">

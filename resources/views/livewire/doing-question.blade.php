@@ -24,10 +24,14 @@
 
             @if($questions->currentPage() == $questions->lastPage())
                 <div class="text-center">
-                    <a href="{{ route('exam.result', $exam->id) }}"
-                       class="bg-green-500 font-bold px-10 py-3 rounded-full text-white">
-                        NỘP BÀI
-                    </a>
+                    <form action="{{ route('exam.save-result') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="exam_id" value="{{$exam->id}}">
+                        <button type="submit"
+                           class="bg-green-500 font-bold px-10 py-3 rounded-full text-white">
+                            NỘP BÀI
+                        </button>
+                    </form>
                 </div>
             @endif
         </div>

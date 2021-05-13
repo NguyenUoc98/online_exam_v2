@@ -6,7 +6,7 @@
                     <img src="{{ Voyager::image($exam->subject->image) }}" class="h-64 lg:h-96 w-full">
                     <div class="bg-white h-full p-4">
                         <p class="font-bold text-4xl">{{ $exam->subject->name }}</p>
-                        <p class="title">Đề thi {{ $semester->name }}
+                        <p class="title">Đề thi {{ $semester->name }} (Đề số {{ $exam->id }})<br>
                             gồm {{ $exam->num_question }} câu, thời gian
                             thi {{ $exam->time }} phút</p>
                         <p class="danhgia">

@@ -76,4 +76,9 @@ class Exam extends Model
     {
         return $this->hasMany(Rate::class)->with('user');
     }
+
+    public function results()
+    {
+        return $this->hasMany(Result::class)->where('user_id', auth()->id())->orderBy('created_at', 'desc');
+    }
 }

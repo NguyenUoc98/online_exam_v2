@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/css/OwlCarousel2/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="/css/OwlCarousel2/dist/assets/owl.theme.default.min.css">
     <script src="/css/OwlCarousel2/dist/owl.carousel.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body>
 {{ menu('header', 'layouts.menu') }}
@@ -27,5 +28,19 @@
 @include('layouts.footer')
 
 @livewireScripts
+@if(@session('notify'))
+    @php
+        $notify = @session('notify');
+    @endphp
+    <script type="text/javascript">
+        $(document).ready(function () {
+            Swal.fire(
+                '{{ $notify['title'] }}',
+                '{{ $notify['msg'] }}',
+                '{{ $notify['icon'] }}'
+            )
+        });
+    </script>
+@endif
 </body>
 </html>

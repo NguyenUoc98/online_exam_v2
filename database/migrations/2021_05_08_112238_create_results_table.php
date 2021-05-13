@@ -18,7 +18,7 @@ class CreateResultsTable extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('exam_id');
             $table->integer('num_correct');
-            $table->integer('score');
+            $table->float('score');
             $table->integer('academic_power');
             $table->timestamps();
         });

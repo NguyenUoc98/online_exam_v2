@@ -1,15 +1,15 @@
-@extends('admin.layout.index')
+@extends('layouts.master')
 @section('body')
-	
+
 			<div class="container-fluid bgsearch">
 				<div class="container thiTHPTQG">
 				<div class="row main_test" >
 					<div class="col-md-12">
 						<div class="col-md-12 tieudetintuc">
-						
+
 								<h3> Kết Quả Tìm Kiếm</h3>
 						</div>
-						
+
 						<p>Tìm thấy {{ count($dethi) }} đề thi </p>
 						  <div class="tab-content">
 							    <div id="home" class="tab-pane fade in active">
@@ -21,9 +21,9 @@
 									     		<p class="tenmon">{{ $dt2->tenmh}}</p>
 									     		<p class="title">Đề thi {{ $dt2->tenky}} gồm {{ $dt2->socau}} câu, thời gian thi {{ $dt2->thoigianthi}} phút</p>
 									     		<p class="danhgia">
-									     			
+
 									     				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-									     			
+
 
 									     			<i class="fas fa-users hscmt"></i> 134
 									     		</p>
@@ -31,11 +31,11 @@
 									     </a>
 											@endforeach
 							     	</div>
-							     
+
 							    </div>
 						</div>
-						  
-						  		
+
+
 				</div>
 			</div>
 

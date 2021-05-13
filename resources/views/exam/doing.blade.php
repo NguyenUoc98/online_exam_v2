@@ -1,4 +1,4 @@
-@extends('admin.layout.index')
+@extends('layouts.master')
 <style>
     #question {
         padding: 20px;
@@ -77,7 +77,7 @@
         @livewire('doing-question', ['exam' => $exam])
     </div>
     <script>
-        var m = "1";
+        var m = "{{ $exam->time }}";
         var s = 0; // Giây
         var timeout = null; // Timeout
 
@@ -96,7 +96,7 @@
 
                 // alert('Hết giờ');
                 $(window).off('beforeunload');
-                window.location.assign("{{ route('exam.result', $exam->id) }}");
+                window.location.assign("{{ route('exam.save-result', $exam->id) }}");
                 return false;
             }
 

@@ -1,4 +1,4 @@
-@extends('admin.layout.index')
+@extends('layouts.master')
 <style>
     .stars {
         color: #ffcf18;
@@ -9,12 +9,12 @@
         <div class="md:flex">
             <div class="md:mr-10 my-10 md:w-2/3 lg:w-3/4">
                 <div class="bg-white p-8 md:p-12 ">
-                    <h3 class="text-5xl font-bold uppercase md:hidden">ĐỀ {{ $exam->semester->name }}</h3>
+                    <h3 class="text-5xl font-bold uppercase md:hidden">ĐỀ {{ $exam->semester->name }} (Đề số {{ $exam->id }})</h3>
                     <div class="grid grid-cols-3 gap-3 md:gap-12">
                         <img src="{{ Voyager::image($exam->subject->image) }}"
                              class="picture object-cover h-72 md:h-auto">
                         <div class="col-span-2 text-2xl">
-                            <h3 class="text-5xl font-bold uppercase hidden md:block">ĐỀ {{ $exam->semester->name }}</h3>
+                            <h3 class="text-5xl font-bold uppercase hidden md:block">ĐỀ {{ $exam->semester->name }}  (Đề số {{ $exam->id }})</h3>
                             <table class="w-full lg:w-2/3 table table-bordered">
                                 <tr>
                                     <th><b>Môn thi:</b></th>

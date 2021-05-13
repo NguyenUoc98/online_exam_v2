@@ -36,4 +36,9 @@ class Result extends Model
             'max'  => 10
         ]
     ];
+
+    public function exam()
+    {
+        return $this->belongsTo(Exam::class);
+    }
 }

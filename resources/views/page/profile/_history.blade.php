@@ -8,7 +8,7 @@
     </div>
 
     <div class="p-5 text-2xl">
-        <div class="card-body overflow-x-auto">
+        <div class="card-body overflow-auto max-h-96">
             <table class="table table-bordered">
                 <thead class="bg-primary">
                     <tr>
@@ -33,7 +33,7 @@
                             {{ $history->exam->time }}
                         </td>
                         <td class="text-center">
-                            {{ $history->num_correct }}
+                            {{ "$history->num_correct/{$history->exam->num_question}" }}
                         </td>
                         <td class="text-center">
                             {{ $history->score }}

@@ -33,7 +33,7 @@ class HomeController extends Controller
 
     public function profile()
     {
-        $user = auth()->user()->with('results')->first();
+        $user = auth()->user();
         return view('page.profile.index', compact('user'));
     }
 

@@ -5,6 +5,7 @@
     <title>Thi Trực Tuyến</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="/imgs/favicon.ico">
     <script src="{{ asset('js/jquery3.3.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">

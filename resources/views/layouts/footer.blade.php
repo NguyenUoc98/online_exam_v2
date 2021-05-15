@@ -3,13 +3,12 @@
         <div class="grid md:grid-cols-3 text-2xl leading-10 px-10">
             <div class="footer_lienhe mb-10">
                 <a href="{{url('trangchu')}}">
-                    <img src="{{ asset('imgs/logo-light.png') }}" alt="" class="mb-10">
+                    <img src="{{ asset('imgs/logo.png') }}" alt="" class="mb-10 h-24">
                 </a>
                 <!-- <h2 class="lgo"><i class="fas fa-graduation-cap mucunhan"></i> <span>EXAMIN</span></h2> -->
-                <p><span class="glyphicon glyphicon-map-marker"></span> &nbsp;Địa chỉ: Mỹ Hào, Hưng Yên</p>
-                <p><span class="glyphicon glyphicon-earphone"></span>&nbsp; Điện thoại: 0969 79 8583</p>
-                <p><span class="glyphicon glyphicon-phone-alt"></span> &nbsp;Hotline: (+84) 1648 46 6660</p>
-                <p class="guimail"><span class="glyphicon glyphicon-envelope"></span> &nbsp; Email: ngocthao@gmail.com
+                <p><span class="glyphicon glyphicon-map-marker"></span> &nbsp;Địa chỉ: Tạ Quang Bửu, HBT, HN</p>
+                <p><span class="glyphicon glyphicon-earphone"></span>&nbsp; Điện thoại: 0326176363</p>
+                <p class="guimail"><span class="glyphicon glyphicon-envelope"></span> &nbsp; Email: ngoclinhhmh@gmail.com
                 </p>
 
                 <div class="email-box justify-start">
@@ -49,7 +48,7 @@
     </div>
     <div class="thelast">
         <div class="cop container">
-            <i class="far fa-copyright"></i> Copyright 2019 Develop by Ngoc Thao
+            <i class="far fa-copyright"></i> Copyright 2021 Develop by Ngoc Linh
             <i class="fas fa-envelope "></i>
             <i class="fab fa-youtube-square"></i>
             <i class="fab fa-twitter-square"></i>

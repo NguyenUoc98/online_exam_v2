@@ -3,7 +3,7 @@
         <div class="container mx-auto">
             <div class="flex justify-between items-center">
                 <a href="{{ route('home') }}">
-                    <img src="{{asset('/imgs/logo-light.png') }}" alt="">
+                    <img src="{{asset('/imgs/logo.png') }}" class="h-24" alt="">
                 </a>
                 <div class="ngang hidden md:block">
                     <ul>

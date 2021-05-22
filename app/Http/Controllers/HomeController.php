@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Page;
 use App\Models\Semester;
 use App\Models\Slide;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -34,7 +35,9 @@ class HomeController extends Controller
     public function profile()
     {
         $user = auth()->user();
-        return view('page.profile.index', compact('user'));
+        $histories = $user->results;
+        $academics = $histories->countBy('academic_power')->toArray();
+        return view('page.profile.index', compact('user', 'histories', 'academics'));
     }
 
     /**

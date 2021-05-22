@@ -56,4 +56,32 @@ class User extends \TCG\Voyager\Models\User
     {
         return $this->belongsToMany(Exam::class, 'user_answers');
     }
+
+    public function getPoint()
+    {
+        return $this->results->avg('score');
+    }
+
+    public function getRank()
+    {
+        $ranks = static::rankResults();
+        return [
+            'rank'  => array_search($this->id, array_column($ranks, 'user_id')) + 1,
+            'total' => count($ranks)
+        ];
+    }
+
+    public static function rankResults()
+    {
+        $array = static::get()->filter(function($user) {
+            return $user->hasRole('user');
+        })->map(function($user) {
+            return ['user_id' => $user->id, 'point' => $user->getPoint()];
+        })->toArray();
+
+        usort($array, function($a, $b) {
+            return $a['point'] <= $b['point'];
+        });
+        return $array;
+    }
 }

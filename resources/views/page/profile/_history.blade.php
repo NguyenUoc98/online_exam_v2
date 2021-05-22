@@ -21,7 +21,7 @@
                     </tr>
                 </thead>
                 <tbody class="list">
-                @forelse($user->results as $history)
+                @forelse($histories as $history)
                     <tr>
                         <td scope="row" class="text-center">
                             <span>{{ $history->exam->subject->name }}</span>
@@ -44,7 +44,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="4" class="text-center">Không có dữ liệu</td>
+                        <td colspan="6" class="text-center">Không có dữ liệu</td>
                     </tr>
                 @endforelse
                 </tbody>

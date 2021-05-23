@@ -1,0 +1,117 @@
+.chitietdethi {
+    /*border: 1px solid #000;*/
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    font-family: "Times New Roman", Times, serif;
+    background: #fff;
+    color: #000;
+    margin: 0 auto;
+}
+
+.head h4, h5 {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.under_gach {
+    border-bottom: 1.5px solid #000;
+    width: 150px;
+    margin: auto;
+}
+
+.under_gach2 {
+    border-bottom: 1.5px solid #000;
+    width: 200px;
+    margin-bottom: 15px;
+}
+
+.dechinhthuc {
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.tenkythi {
+    text-transform: uppercase;
+}
+
+.head i {
+    font-size: 15px;
+}
+
+.made {
+    padding: 7px 50px;
+    border: 2px solid;
+    font-weight: bold;
+}
+
+.noidungdethi {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.noidungdethi .tieudecauhoi {
+    text-align: left;
+    font-size: 16px;
+    padding-bottom: 25px;
+}
+
+.thongtindethi {
+    font-weight: bold;
+    text-align: left;
+    margin-top: 20px;
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.noidungchitietcauhoi {
+    font-size: 16px;
+    text-align: left;
+}
+
+.tendapan {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.ketthucdethi {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.design_cauhoi a {
+    color: #fff;
+}
+
+.design_cauhoi .btn-primary {
+    margin-right: 5px;
+}
+
+span p {
+    display: inline;
+}
+
+.tieudecauhoi p {
+    display: inline;
+}
+
+.correct-answer {
+    display: flex;
+    width: -webkit-fill-available;
+}
+
+.answer {
+    border: 1px solid;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.bg-gray {
+    background-image: url('/imgs/bg-gray.png');
+    background-size: cover;
+}

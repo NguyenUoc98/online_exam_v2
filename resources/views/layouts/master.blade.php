@@ -13,13 +13,9 @@
     <link href="{{ asset('css/hocsinh.css') }}" rel="stylesheet">
     <link href="{{ asset('css/chitiet/lienhe.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
-    <!-- 2 follow links is to count number up -->
-    <script src="{{ asset('js/counter_up/jquery.counterup.js') }}"></script>
-    <script src="{{ asset('js/waypoint/jquery.waypoints.js') }}"></script>
     <link rel="stylesheet" href="/css/OwlCarousel2/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="/css/OwlCarousel2/dist/assets/owl.theme.default.min.css">
     <script src="/css/OwlCarousel2/dist/owl.carousel.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body>
 {{ menu('header', 'layouts.menu') }}

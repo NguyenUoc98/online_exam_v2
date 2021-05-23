@@ -1,131 +1,5 @@
 @extends('voyager::master')
 @section('page_title', __('voyager::generic.view').' '.$dataType->getTranslatedAttribute('display_name_singular'))
-<style>
-    .chitietdethi {
-        /*border: 1px solid #000;*/
-        text-align: center;
-        margin-top: 0px;
-        margin-bottom: 50px;
-        font-family: "Times New Roman", Times, serif;
-        background: #fff;
-        color: #000;
-    }
-
-    .head h4, h5 {
-        font-weight: bold;
-        margin-top: 20px;
-    }
-
-    .under_gach {
-        border-bottom: 1.5px solid #000;
-        width: 150px;
-        margin: auto;
-    }
-
-    .under_gach2 {
-        border-bottom: 1.5px solid #000;
-        width: 200px;
-        margin: auto;
-    }
-
-    .dechinhthuc {
-        font-size: 15px;
-        text-transform: uppercase;
-    }
-
-    .tenkythi {
-        text-transform: uppercase;
-    }
-
-    .head {
-        margin-top: 30px;
-    }
-
-    .head i {
-        font-size: 15px;
-    }
-
-    .made {
-        padding: 7px 50px;
-        border: 2px solid;
-        font-weight: bold;
-    }
-
-    .noidungdethi {
-        margin-bottom: 30px;
-    }
-
-    .cauhoidethi {
-        margin-top: 10px;
-    }
-
-    .noidungdethi .tieudecauhoi {
-        text-align: left;
-        margin-left: -23px;
-        font-size: 16px;
-    }
-
-    .thongtindethi {
-        font-weight: bold;
-        font-size: 17px;
-        margin-left: -45px;
-    }
-
-    .noidungchitietcauhoi {
-        font-size: 16px;
-        margin-left: -108px;
-        text-align: left;
-    }
-
-    .tendapan {
-        font-weight: bold;
-        margin-right: 5px;
-    }
-
-    .ketthucdethi {
-        font-weight: bold;
-        font-size: 16px;
-        margin-top: 30px;
-    }
-
-    .noidungdethi, .head {
-        margin-left: 20px;
-    }
-
-    .design_cauhoi a {
-        color: #fff;
-    }
-
-    .design_cauhoi .btn-primary {
-        margin-right: 5px;
-    }
-
-    span p {
-        display: inline;
-    }
-
-    .tieudecauhoi p {
-        display: inline;
-    }
-
-    .correct-answer {
-        display: flex;
-        width: -webkit-fill-available;
-    }
-
-    .answer {
-        border: 1px solid;
-        border-radius: 100%;
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-        margin-right: 10px;
-    }
-
-    .bg-gray {
-        background: gray;
-    }
-</style>
 @section('page_header')
     <h1 class="page-title">
         <i class="{{ $dataType->icon }}"></i> {{ __('voyager::generic.viewing') }} {{ ucfirst($dataType->getTranslatedAttribute('display_name_singular')) }}
@@ -158,6 +32,10 @@
                 {{ __('voyager::generic.return_to_list') }}
             </a>
         @endcan
+        @can('browse', $dataTypeContent)
+            <button class="btn btn-dark" id="print-exam" type="button">In đề</button>
+            <button class="btn btn-dark" id="print-answer" type="button">In đáp án</button>
+        @endcan
     </h1>
     @include('voyager::multilingual.language-selector')
 @stop
@@ -165,91 +43,85 @@
 @section('content')
     <div class="page-content read container-fluid">
         <div class="container">
-            <div class="container chitietdethi" id="HTMLtoPDF">
-                <div class="row head">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4>SỞ GIÁO DỤC VÀ ĐÀO TẠO</h4>
-                            <p class="under_gach"></p>
-                            <h5 class="dechinhthuc">{{ array_flip(\App\Models\Exam::STATUS)[$dataTypeContent->status] }}</h5>
-                            <i>Ngày
-                                thi: {{ Carbon\Carbon::createFromFormat('Y-m-d', $dataTypeContent->date)->format('d/m/Y') }}</i>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="tenkythi">{{ strtoupper($dataTypeContent->semester->name . ' ' . $dataTypeContent->grade->name) }}</h4>
-                            <h5 class="dechinhthuc">MÔN: {{ strtoupper($dataTypeContent->subject->name) }}</h5>
+            <div style="background: #fff;padding: 50px 0;margin-bottom: 30px;">
+                <div class="chitietdethi" id="HTMLtoPDF-exam" style="max-width: 900px;padding: 0 50px;">
+                    <div class="head">
+                        <div style="display: flex;justify-content: space-between;">
+                            <div>
+                                <h4>SỞ GIÁO DỤC VÀ ĐÀO TẠO</h4>
+                                <p class="under_gach"></p>
+                                <h5 class="dechinhthuc">{{ array_flip(\App\Models\Exam::STATUS)[$dataTypeContent->status] }}</h5>
+                                <i>Ngày
+                                    thi: {{ Carbon\Carbon::createFromFormat('Y-m-d', $dataTypeContent->date)->format('d/m/Y') }}</i>
+                            </div>
+                            <div>
+                                <h4 class="tenkythi">{{ strtoupper($dataTypeContent->semester->name . ' ' . $dataTypeContent->grade->name) }}</h4>
+                                <h5 class="dechinhthuc">MÔN: {{ strtoupper($dataTypeContent->subject->name) }}</h5>
 
-                            <i>Thời gian làm bài: {{ $dataTypeContent->time }} phút</i>
-                            <p class="under_gach2"></p>
+                                <i>Thời gian làm bài: {{ $dataTypeContent->time }} phút</i>
+                                <p class="under_gach2"></p>
+                                <span class="made">MÃ ĐỀ: {{ $dataTypeContent->id }}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6"></div>
-                        <div class="col-md-6"><span class="made">MÃ ĐỀ: {{ $dataTypeContent->id }}</span></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8 thongtindethi ">Đề thi gồm {{ $dataTypeContent->num_question }} câu
+
+                        <div class="thongtindethi ">Đề thi gồm {{ $dataTypeContent->num_question }} câu
                             (Từ câu hỏi 1 đến câu hỏi {{ $dataTypeContent->num_question }})
                         </div>
                     </div>
-                </div>
-                <div class="row noidungdethi">
-                    {{-- duyệt mãng ctđề thi --}}
-                    @foreach($dataTypeContent->questions as $key=>$question)
-                        <div class="cauhoidethi">
-                            <div class="row">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-10 tieudecauhoi">
+                    <table class="noidungdethi">
+                        @foreach($dataTypeContent->questions as $key=>$question)
+                            <tr>
+                                <td class="tieudecauhoi" colspan="6">
                                     <span class="tendapan">Câu {{ $key + 1 }}:</span> {!! $question->content !!}
-                                </div>
-                            </div>
-                            <div class="row noidungchitietcauhoi">
-                                <div class="col-md-2"></div>
+                                </td>
+                            </tr>
+                            <tr class="noidungchitietcauhoi">
                                 @foreach($question->answers as $key=>$answer)
-                                    <div class="col-md-2">
-                                        <span
-                                            class="tendapan">{{ chr(65 + $key) }}. </span><span>{!! $answer->answer !!}</span>
-                                    </div>
+                                    <td style="padding-bottom: 25px;">
+                                        <span class="tendapan">{{ chr(65 + $key) }}. </span><span>{!! $answer->answer !!}</span>
+                                    </td>
                                 @endforeach
-                                <div class="col-md-2"></div>
-                            </div>
-                        </div>
-
-                    @endforeach
-
-                    <div class="row ketthucdethi">
-                        <div class="col-md-12">---------- HẾT ----------</div>
-                        <div class="col-md-12">Thí sinh không được sử dụng tài liệu. Cán bộ coi thi không giải
-                            thích gì thêm.
-                        </div>
+                            </tr>
+                        @endforeach
+                    </table>
+                    <div class="ketthucdethi">
+                        <p>---------- HẾT ----------</p>
+                        <p>Thí sinh không được sử dụng tài liệu. Cán bộ coi thi không giải thích gì thêm.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="container chitietdethi" id="HTMLtoPDF2">
-                <div class="row ketthucdethi" style="margin: 0px 50px;">
-                    <div class="col-md-12" style="margin-top: 50px">---------- ĐÁP ÁN MÃ ĐỀ {{ $dataTypeContent->id }} ----------
-                    </div>
-                    @foreach($dataTypeContent->questions as $key=>$question)
-                        @if(($key + 1) % 10 == 1)
-                            <div class="col-md-3">
-                                @endif
-                                <div style="display: flex;padding: 10px; align-items: center;">
-                                    <span style="width: 15%; text-align: left;">{{ $key + 1 }}. </span>
-                                    <div class="correct-answer">
-                                        @foreach($question->answers as $key2=>$answer)
-                                            <span
-                                                class="answer @if($answer->is_correct) bg-gray @endif">{{ chr(65 + $key2) }}</span>
-                                        @endforeach
+            <div style="background: #fff;padding: 50px 0;margin-bottom: 30px;">
+                <div class="chitietdethi" style="padding: 0 50px;" id="HTMLtoPDF-answer">
+                    <div class="row ketthucdethi">
+                        <p style="font-size: 25px;">---------- ĐÁP ÁN MÃ ĐỀ {{ $dataTypeContent->id }} ----------</p>
+                        @foreach($dataTypeContent->questions as $key=>$question)
+                            @if(($key + 1) % 15 == 1)
+                                <div class="col-md-3">
+                                    @endif
+                                    <div style="display: flex;padding: 10px; align-items: center;">
+                                        <span style="width: 15%; text-align: left;">{{ $key + 1 }}. </span>
+                                        <div class="correct-answer">
+                                            @foreach($question->answers as $key2=>$answer)
+                                                @if($answer->is_correct)
+                                                <div style="position: relative;margin-right: 10px;">
+                                                    <span class="answer" style="position: absolute">{{ chr(65 + $key2) }}</span>
+                                                    <img style="width: 30px;height: 30px;border-radius: 100%;" src="/imgs/bg-gray.png">
+                                                </div>
+                                                @else
+                                                    <span class="answer">{{ chr(65 + $key2) }}</span>
+                                                @endif
+                                            @endforeach
+                                        </div>
                                     </div>
+                                    @if(($key + 1) % 15 == 0)
                                 </div>
-                                @if(($key + 1) % 10 == 0)
-                            </div>
-                        @endif
-                    @endforeach
-                        @if(($key + 1) % 10 != 0)
-                            </div>
-                        @endif
+                            @endif
+                        @endforeach
+                        @if(($key + 1) % 15 != 0)
+                    </div>
+                    @endif
+                </div>
                 </div>
             </div>
         </div>
@@ -307,33 +179,24 @@
             $('#delete_modal').modal('show');
         });
 
-        function HTMLtoPDF() {
-            var pdf = new jsPDF('p', 'pt', 'letter');
-            source = $('#HTMLtoPDF')[0];
-            specialElementHandlers = {
-                '#bypassme': function (element, renderer) {
-                    return true
-                }
-            }
-            margins = {
-                top: 50,
-                left: 60,
-                width: 545
+        $('#print-exam').click(function() {
+            var mode = "iframe";
+            var close = mode == "popup";
+            var options = {
+                mode: mode,
+                popClose: close
             };
-            pdf.fromHTML(
-                source // HTML string or DOM elem ref.
-                , margins.left // x coord
-                , margins.top // y coord
-                , {
-                    'width': margins.width // max width of content on PDF
-                    , 'elementHandlers': specialElementHandlers
-                },
-                function (dispose) {
-                    // dispose: object with X, Y of the last line add to the PDF
-                    //          this allow the insertion of new lines after html
-                    pdf.save('html2pdf.pdf');
-                }
-            )
-        }
+            $('#HTMLtoPDF-exam').printArea(options);
+        });
+
+        $('#print-answer').click(function() {
+            var mode = "iframe";
+            var close = mode == "popup";
+            var options = {
+                mode: mode,
+                popClose: close
+            };
+            $('#HTMLtoPDF-answer').printArea(options);
+        });
     </script>
 @stop

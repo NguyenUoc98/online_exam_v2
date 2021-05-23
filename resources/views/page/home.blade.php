@@ -41,6 +41,8 @@
         </div>
     </div>
 
+    @livewire('rank-table')
+
     <div class="mt-20">
         <div class="loiich mb-1">
             <div class="camnhan mx-auto text-4xl md:w-1/3">

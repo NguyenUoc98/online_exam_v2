@@ -31,7 +31,7 @@
                         <img class="h-16 mr-4 rounded-full" src="{{ Voyager::image($user->avatar) }}"> {{ $user->name }}
                     </td>
                     <td class="text-center">{{ $user->results()->groupBy('exam_id')->count() }}</td>
-                    <td class="text-center">{{ $result['point'] }}</td>
+                    <td class="text-center">{{ $result['point'] ?? 0 }}</td>
                     <td class="text-center">{{ \App\Models\Result::ACADEMIC_POWER[$academic_power]['name'] }}</td>
                 </tr>
             @endforeach

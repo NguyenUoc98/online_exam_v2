@@ -52,10 +52,10 @@ class ExamController extends Controller
                         'icon'  => 'error'
                     ]
                 ]);
-            } else {
-                auth()->user()->examsWithAnswer()->detach($id);
             }
         }
+
+        auth()->user()->examsWithAnswer()->detach($id);
 
         $exam = Exam::with(['semester:id,name', 'subject:id,name'])->findOrFail($id);
         $questions = $exam->questions()->paginate(1);

@@ -22,18 +22,16 @@
         <div class="md:flex justify-between items-center">
             {{ $questions->links() }}
 
-            @if($questions->currentPage() == $questions->lastPage())
-                <div class="text-center">
-                    <form action="{{ route('exam.save-result') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="exam_id" value="{{$exam->id}}">
-                        <button type="submit"
-                           class="bg-green-500 font-bold px-10 py-3 rounded-full text-white">
-                            NỘP BÀI
-                        </button>
-                    </form>
-                </div>
-            @endif
+            <div class="text-center @if($questions->currentPage() != $questions->lastPage()) hidden  @endif">
+                <form id="doing_submit" action="{{ route('exam.save-result') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="exam_id" value="{{$exam->id}}">
+                    <button type="submit"
+                        class="bg-green-500 font-bold px-10 py-3 rounded-full text-white">
+                        NỘP BÀI
+                    </button>
+                </form>
+            </div>
         </div>
     @endforeach
 </div>

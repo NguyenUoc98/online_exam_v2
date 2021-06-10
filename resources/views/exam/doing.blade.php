@@ -94,10 +94,8 @@
             if (m == -1) {
                 clearTimeout(timeout);
 
-                // alert('Hết giờ');
                 $(window).off('beforeunload');
-                window.location.assign("{{ route('exam.save-result', $exam->id) }}");
-                return false;
+                $("#doing_submit").submit();
             }
 
             $('#m').text(m.toString());

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
     <link rel="icon" href="/imgs/favicon.ico">
-    <script src="{{ asset('js/jquery3.3.1.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>

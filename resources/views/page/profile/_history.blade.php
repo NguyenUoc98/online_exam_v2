@@ -24,16 +24,16 @@
                 @forelse($histories as $history)
                     <tr>
                         <td scope="row" class="text-center">
-                            <span>{{ $history->exam->subject->name }}</span>
+                            <span>{{ $history->exam->subject->name ?? 'undefined'}}</span>
                         </td>
                         <td class="text-center">
-                            {{ $history->exam->id }}
+                            {{ $history->exam->id ?? 'undefined' }}
                         </td>
                         <td class="text-center">
-                            {{ $history->exam->time }}
+                            {{ $history->exam->time ?? 'undefined' }}
                         </td>
                         <td class="text-center">
-                            {{ "$history->num_correct/{$history->exam->num_question}" }}
+                            {{ "$history->num_correct/" . ($history->exam->num_question ?? 0) }}
                         </td>
                         <td class="text-center">
                             {{ $history->score }}

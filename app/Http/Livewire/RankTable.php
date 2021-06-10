@@ -19,7 +19,7 @@ class RankTable extends Component
 
     public function render()
     {
-        $rankResults = (new Collection(User::rankResults()))->paginate(10);
+        $rankResults = (new Collection(User::rankResults()))->paginate(5);
 
         return view('livewire.rank-table', ['rankResults' => $rankResults]);
     }

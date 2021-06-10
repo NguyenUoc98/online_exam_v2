@@ -38,16 +38,6 @@
                             @endif
                         @endforeach
 
-                        <li>
-                            <form method="get" id="searchform" action="search">
-                                <div class="email-box">
-                                    <i class="fas fa-search"></i>
-                                    <input type="text" class="tbox" name="key" placeholder="  Nhập từ khóa tìm kiếm">
-                                    <input type="submit" value="Tìm kiếm" class="btntk">
-
-                                </div>
-                            </form>
-                        </li>
                     </ul>
                 </div>
                 <div class="flex items-center justify-end h-available">

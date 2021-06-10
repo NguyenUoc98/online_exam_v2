@@ -23,14 +23,6 @@
             <div class="md:ml-10 md:w-2/3 w-full">
                 @include('page.profile._edit_account')
                 @include('page.profile._history')
-{{--                @if(auth()->user()->isStudent())--}}
-{{--                    @include('pages.profile._edit_student')--}}
-{{--                    @include('pages.profile._achievements')--}}
-{{--                @else--}}
-{{--                    <script>--}}
-{{--                        $('#edit-user').show();--}}
-{{--                    </script>--}}
-{{--                @endif--}}
             </div>
         </div>
     </div>

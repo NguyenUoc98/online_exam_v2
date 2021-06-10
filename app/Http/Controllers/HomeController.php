@@ -51,10 +51,6 @@ class HomeController extends Controller
         $validator = Validator::make($request->all(), [
             'user_name'    => 'required|max:60',
             'email'        => 'required|email',
-            'subject_id'   => 'required',
-            'teacher_id'   => 'required',
-            'time'         => 'required|numeric|min:5',
-            'num_question' => 'required|numeric|min:10'
         ]);
 
         if ($validator->fails()) {

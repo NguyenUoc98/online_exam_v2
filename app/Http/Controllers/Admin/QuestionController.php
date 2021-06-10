@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use TCG\Voyager\Events\BreadDataAdded;
+use TCG\Voyager\Events\BreadDataUpdated;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
@@ -202,5 +203,67 @@ class QuestionController extends VoyagerBaseController
         $answers = $dataTypeContent->answers;
 
         return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'answers'));
+    }
+
+    // POST BR(E)AD
+    public function update(Request $request, $id)
+    {
+        $slug = $this->getSlug($request);
+
+        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+
+        // Compatibility with Model binding.
+        $id = $id instanceof \Illuminate\Database\Eloquent\Model ? $id->{$id->getKeyName()} : $id;
+
+        $model = app($dataType->model_name);
+        if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope'.ucfirst($dataType->scope))) {
+            $model = $model->{$dataType->scope}();
+        }
+        if ($model && in_array(SoftDeletes::class, class_uses_recursive($model))) {
+            $data = $model->withTrashed()->findOrFail($id);
+        } else {
+            $data = $model->findOrFail($id);
+        }
+
+        // Check permission
+        $this->authorize('edit', $data);
+
+        // Thêm đáp án
+        $check = true;
+        $arrayAnswer = [];
+        foreach ($request->get('answer') as $answer) {
+            $is_correct = ($answer['is_correct'] ?? 0) ? 1 : 0;
+            if ($is_correct) {
+                $check = false;
+            }
+            array_push($arrayAnswer, new Answer(['is_correct' => $is_correct, 'answer' => $answer['answer']]));
+        }
+
+        if ($check) {
+            return redirect()->back()
+                ->withErrors(['answer' => 'Chưa đánh dấu đáp án đúng'])
+                ->withInput();
+        }
+
+        // Validate fields with ajax
+        $val = $this->validateBread($request->all(), $dataType->editRows, $dataType->name, $id)->validate();
+        $this->insertUpdateData($request, $slug, $dataType->editRows, $data);
+
+        event(new BreadDataUpdated($dataType, $data));
+
+        $data->answers()->delete();
+        $data->answers()->saveMany($arrayAnswer);
+
+
+        if (auth()->user()->can('browse', app($dataType->model_name))) {
+            $redirect = redirect()->route("voyager.{$dataType->slug}.index");
+        } else {
+            $redirect = redirect()->back();
+        }
+
+        return $redirect->with([
+            'message'    => __('voyager::generic.successfully_updated')." {$dataType->getTranslatedAttribute('display_name_singular')}",
+            'alert-type' => 'success',
+        ]);
     }
 }

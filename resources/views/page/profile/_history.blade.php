@@ -36,7 +36,7 @@
                             {{ "$history->num_correct/" . ($history->exam->num_question ?? 0) }}
                         </td>
                         <td class="text-center">
-                            {{ $history->score }}
+                            {{ round($history->score, 2) }}
                         </td>
                         <td class="text-center">
                             {{ \App\Models\Result::ACADEMIC_POWER[$history->academic_power]['name'] }}

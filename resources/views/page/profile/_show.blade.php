@@ -55,7 +55,7 @@
             </tr>
             <tr>
                 <th >Điểm trung bình</th>
-                <td class="text-center">{{ $point }}</td>
+                <td class="text-center">{{ round($point, 2) }}</td>
             </tr>
             <tr>
                 <th >Xếp loại</th>

@@ -96,5 +96,10 @@ Route::prefix('profile')->group(function() {
     ]);
 });
 
+Route::get('documents', [
+    'as' => 'documents.index',
+    'uses' => 'HomeController@documents'
+]);
+
 
 Auth::routes();

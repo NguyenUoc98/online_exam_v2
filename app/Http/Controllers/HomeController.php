@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Document;
 use App\Models\Page;
 use App\Models\Semester;
 use App\Models\Slide;
@@ -30,6 +31,12 @@ class HomeController extends Controller
     {
         $page = Page::whereSlug($slug)->firstOrFail();
         return view('page.show', compact('page'));
+    }
+
+    public function documents()
+    {
+        $documents = Document::paginate(5);
+        return view('documents.index', compact('documents'));
     }
 
     public function profile()

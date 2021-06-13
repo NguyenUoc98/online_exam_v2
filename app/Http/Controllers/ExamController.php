@@ -115,7 +115,13 @@ class ExamController extends Controller
     public function getResult($exam_id)
     {
         $exam = Exam::findOrFail($exam_id);
+        $userAnswer = UserAnswer::where([
+            ['exam_id', $exam_id],
+            ['user_id', auth()->id()]
+        ])->get()->mapWithKeys(function ($value) {
+            return [$value->question_id => $value->answer_selected];
+        });
         $result = $exam->results()->first();
-        return view('exam.result', compact('result', 'exam'));
+        return view('exam.result', compact('result', 'exam', 'userAnswer'));
     }
 }

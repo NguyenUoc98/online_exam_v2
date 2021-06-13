@@ -13,6 +13,7 @@
     <link href="{{ asset('css/hocsinh.css') }}" rel="stylesheet">
     <link href="{{ asset('css/chitiet/lienhe.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/OwlCarousel2/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="/css/OwlCarousel2/dist/assets/owl.theme.default.min.css">
     <script src="/css/OwlCarousel2/dist/owl.carousel.min.js"></script>

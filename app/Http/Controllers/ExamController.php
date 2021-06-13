@@ -29,6 +29,13 @@ class ExamController extends Controller
 
         $rateAble = $rates->get()->where('user_id', auth()->id())->count() ? false : true;
 
+        if($rateAble) {
+            $lastResult = auth()->user()->results()->where('exam_id', $id)->orderBy('created_at', 'desc')->first();
+            if (!$lastResult) {
+                $rateAble = false;
+            }
+        }
+
         return view('exam.show', compact('exam', 'otherExams', 'comments', 'rates', 'rating', 'totalRate', 'rateAble'));
     }
 

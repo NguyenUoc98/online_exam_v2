@@ -41,7 +41,7 @@
                             <tr class="noidungchitietcauhoi">
                                 @foreach($question->answers as $key=>$answer)
                                     <td style="padding-bottom: 25px;" class="relative w-1/4">
-                                        @if($userAnswer[$question->id] == $answer->id)
+                                        @if(isset($userAnswer[$question->id]) && $userAnswer[$question->id] == $answer->id)
                                             <span class="answer p-3">{{ chr(65 + $key) }} </span><span>{!! $answer->answer !!}</span>
                                             @if($answer->is_correct)
                                                 <img style="top: -9px; left: 14px;" class="absolute w-10" src="/imgs/tick.png">

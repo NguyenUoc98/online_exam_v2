@@ -41,9 +41,7 @@
         </div>
     </div>
 
-    @auth
-        @livewire('rank-table')
-    @endauth
+    @livewire('rank-table')
 
     <div class="mt-20">
         <div class="loiich mb-1">

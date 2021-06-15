@@ -1,8 +1,8 @@
 body {
-    background-image: url(../imgs/bg_login.jpg);
-    /*-webkit-background-size:cover;
+    background-image: url(../imgs/bg_login.jpeg);
+    -webkit-background-size:cover;
     background-size: cover;
-    background-position: center center;*/
+    background-position: center center;
 }
 
 .form-area {

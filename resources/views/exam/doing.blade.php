@@ -3,7 +3,7 @@
     #question {
         padding: 20px;
         font-size: 22px;
-        background-color: #08038C;
+        background-color: #996699;
         border-radius: 20px;
         margin: 10px 0 10px 0;
         color: #f6f6f6;

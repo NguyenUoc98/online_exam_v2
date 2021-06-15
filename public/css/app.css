@@ -2215,8 +2215,7 @@ video {
 
 .bg-blue-800{
   --bg-opacity: 1 !important;
-  background-color: #2c5282 !important;
-  background-color: rgba(44, 82, 130, var(--bg-opacity)) !important;
+  background-color: #996699 !important;
 }
 
 .bg-blue-900{
@@ -2390,13 +2389,11 @@ video {
 .bg-primary{
   --bg-opacity: 1 !important;
   background-color: #996699 !important;
-  background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
 }
 
 .bg-primary-light{
   --bg-opacity: 1 !important;
-  background-color: #023773 !important;
-  background-color: rgba(2, 55, 115, var(--bg-opacity)) !important;
+  background-color: #996699 !important;
 }
 
 .hover\:bg-transparent:hover{
@@ -2962,7 +2959,6 @@ video {
 .hover\:bg-primary:hover{
   --bg-opacity: 1 !important;
   background-color: #996699 !important;
-  background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
 }
 
 .hover\:bg-primary-light:hover{
@@ -3534,7 +3530,6 @@ video {
 .focus\:bg-primary:focus{
   --bg-opacity: 1 !important;
   background-color: #996699 !important;
-  background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
 }
 
 .focus\:bg-primary-light:focus{
@@ -8139,8 +8134,7 @@ video {
 
 .border-blue-800{
   --border-opacity: 1 !important;
-  border-color: #2c5282 !important;
-  border-color: rgba(44, 82, 130, var(--border-opacity)) !important;
+  border-color: #996699 !important;
 }
 
 .border-blue-900{
@@ -23742,7 +23736,7 @@ body {
   .sm\:bg-primary{
     --bg-opacity: 1 !important;
     background-color: #996699 !important;
-    background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
+
   }
 
   .sm\:bg-primary-light{
@@ -24314,7 +24308,7 @@ body {
   .sm\:hover\:bg-primary:hover{
     --bg-opacity: 1 !important;
     background-color: #996699 !important;
-    background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
+
   }
 
   .sm\:hover\:bg-primary-light:hover{
@@ -24886,7 +24880,7 @@ body {
   .sm\:focus\:bg-primary:focus{
     --bg-opacity: 1 !important;
     background-color: #996699 !important;
-    background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
+
   }
 
   .sm\:focus\:bg-primary-light:focus{
@@ -45013,7 +45007,7 @@ body {
   .md\:bg-primary{
     --bg-opacity: 1 !important;
     background-color: #996699 !important;
-    background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
+
   }
 
   .md\:bg-primary-light{
@@ -45585,7 +45579,7 @@ body {
   .md\:hover\:bg-primary:hover{
     --bg-opacity: 1 !important;
     background-color: #996699 !important;
-    background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
+
   }
 
   .md\:hover\:bg-primary-light:hover{
@@ -46157,7 +46151,7 @@ body {
   .md\:focus\:bg-primary:focus{
     --bg-opacity: 1 !important;
     background-color: #996699 !important;
-    background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
+
   }
 
   .md\:focus\:bg-primary-light:focus{
@@ -66284,7 +66278,7 @@ body {
   .lg\:bg-primary{
     --bg-opacity: 1 !important;
     background-color: #996699 !important;
-    background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
+
   }
 
   .lg\:bg-primary-light{
@@ -66856,7 +66850,7 @@ body {
   .lg\:hover\:bg-primary:hover{
     --bg-opacity: 1 !important;
     background-color: #996699 !important;
-    background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
+
   }
 
   .lg\:hover\:bg-primary-light:hover{
@@ -67428,7 +67422,7 @@ body {
   .lg\:focus\:bg-primary:focus{
     --bg-opacity: 1 !important;
     background-color: #996699 !important;
-    background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
+
   }
 
   .lg\:focus\:bg-primary-light:focus{
@@ -87555,7 +87549,7 @@ body {
   .xl\:bg-primary{
     --bg-opacity: 1 !important;
     background-color: #996699 !important;
-    background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
+
   }
 
   .xl\:bg-primary-light{
@@ -88127,7 +88121,7 @@ body {
   .xl\:hover\:bg-primary:hover{
     --bg-opacity: 1 !important;
     background-color: #996699 !important;
-    background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
+
   }
 
   .xl\:hover\:bg-primary-light:hover{
@@ -88699,7 +88693,7 @@ body {
   .xl\:focus\:bg-primary:focus{
     --bg-opacity: 1 !important;
     background-color: #996699 !important;
-    background-color: rgba(0, 33, 71, var(--bg-opacity)) !important;
+
   }
 
   .xl\:focus\:bg-primary-light:focus{

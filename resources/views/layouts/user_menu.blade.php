@@ -4,6 +4,6 @@
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="flex items-center justify-between px-10 ">
     @csrf
-    <button type="submit" class="font-bold">Đăng xuất</button>
+    <button type="submit" class="font-bold" style="width: 100%; text-align: left;outline: none; box-shadow: none;">Đăng xuất</button>
     <i class="fas fa-sign-out-alt"></i>
 </form>

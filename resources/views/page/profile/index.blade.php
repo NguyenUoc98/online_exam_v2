@@ -3,7 +3,7 @@
 
 @section('body')
 
-    <div class="pb-64 pt-40 flex" style="background-image: url(/imgs/footerbg.jpg); background-size: cover; background-position: center center;">
+    <div class="pb-64 pt-40 flex" style="background-image: url(/imgs/gbfooter.jpeg); background-size: cover; background-position: center center;">
         <!-- Header container -->
         <div class="container text-3xl">
             <div>

@@ -11,7 +11,7 @@
     @csrf
     <div class="form-area text-white">
         <div class="img-area flex h-20 w-20">
-            <img src="/imgs/login-icon.png" class="box-content p-3  ">
+            <img src="/imgs/favicon.ico" class="box-content p-3  ">
         </div>
         <h2 class="font-bold text-4xl my-4 uppercase text-center">Đăng ký</h2>
 

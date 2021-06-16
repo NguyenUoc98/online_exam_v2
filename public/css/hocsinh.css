@@ -263,7 +263,10 @@ nav {
 
 
 .footer {
-    background-image: url('../imgs/gbfooter.jpg');
+    background-image: url('../imgs/gbfooter.jpeg');
+    -webkit-background-size:cover;
+    background-size: cover;
+    background-position: center center;
     width: 100%;
     color: #fff;
     background-size: cover;
@@ -402,7 +405,7 @@ nav {
 .sodem {
     color: #fff;
     height: 200px;
-    background: linear-gradient(90deg, #1A3B6E, #3D64A0);
+    background: linear-gradient(90deg, #6666CC, #996699);
     text-align: center;
 }
 
@@ -647,7 +650,7 @@ nav {
 
 .tieudetintuc h3 {
     color: #fff;
-    background-color: #002147;
+    background-color: #996699;
     border-radius: 25px 25px 25px 25px;
     font-size: 17px;
     width: 250px;

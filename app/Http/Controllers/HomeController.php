@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Document;
+use App\Models\News;
 use App\Models\Page;
 use App\Models\Semester;
 use App\Models\Slide;
@@ -24,7 +25,8 @@ class HomeController extends Controller
 
     public function news()
     {
-        return view('page.news');
+        $news = News::paginate(5);
+        return view('page.news', compact('news'));
     }
 
     public function page($slug)

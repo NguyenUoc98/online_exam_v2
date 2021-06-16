@@ -1,4 +1,4 @@
-@extends('layouts.master');
+@extends('layouts.master')
 @section('body')
     <div class="container-fluid tintuc">
         <div class="container">

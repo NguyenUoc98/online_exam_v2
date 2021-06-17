@@ -8,6 +8,7 @@ use App\Models\Result;
 use App\Models\UserAnswer;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class ExamController extends Controller
@@ -29,11 +30,13 @@ class ExamController extends Controller
 
         $rateAble = $rates->get()->where('user_id', auth()->id())->count() ? false : true;
 
-        if($rateAble) {
+        if($rateAble && Auth::check()) {
             $lastResult = auth()->user()->results()->where('exam_id', $id)->orderBy('created_at', 'desc')->first();
             if (!$lastResult) {
                 $rateAble = false;
             }
+        } else {
+            $rateAble = false;
         }
 
         return view('exam.show', compact('exam', 'otherExams', 'comments', 'rates', 'rating', 'totalRate', 'rateAble'));
